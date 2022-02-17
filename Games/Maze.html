@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Game Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="CSS GamePage.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <body>
+
+    <div style=" font-size: 30px;text-align: center;" class="item1">Maze (<span id="one" style="font-size: 30px; cursor: pointer; color: #ffffffa3;" onclick="openBar()">Fullscreen</span><span id="two" style="font-size: 30px; cursor: pointer; color: rgba(255, 255, 255, 0.64); display: none;" onclick="closeBar() ">Minimize</span>)</div>
+  
+    <div class="main">
+      <div id="mySidenav" class="sidenav" style="width: 730px !important;">
+        <iframe src="../Custom%20Games/Maze/" width="100%" height="100%"></iframe>
+      </div>
+    </div>
+  
+    <div id="topnav" class="wrapper" style="background: #202020;">
+  
+      <div id="content"></div>
+      <div style="margin: -1.9% 0%;" class="desktop">
+  
+         
+  
+        <div class="inner">
+  
+          <div class="grid-container">
+            <div class="right"></div>
+            <div class="item2">
+              <a href="Merely Attach.html">Merely Attach</a>
+              <br><br>
+              <a href="Bruh page.html">Bruh</a>
+              <br><br>
+              <a href="Maze.html">Maze</a>
+              <br><br>
+              <a href="Wanderers page.html">Wanderers</a>
+              <br><br>
+              <a href="Drift Hunter page.html">Draft Hunter</a>
+              <br><br>
+              <a href="Curio-Stack.html">Curio-Stack</a>
+              <br><br>
+            </div>
+  
+            <div class="item4">
+              <a href="Shoot Your Nightmare page.html">Shoot Your Nightmare</a>
+              <br><br>
+              <a href="Monster Sanctuary page.html">Monster Sanctuary</a>
+              <br><br>
+              <a href="Planetarium 2 page.html">Planetarium 2</a>
+              <br><br>
+              <a href="shellshock page.html">Shellshock</a>
+              <br><br>
+              <a href="Tanki Online page.html">Tanki Online</a>
+              <br><br>
+              <a href="Gartic page.html">Gartic</a>
+              <br><br>
+              <a href="Classic Minecraft page.html">Classic Minecraft</a>
+            </div>
+  
+            <div class="item5">
+              <p>Created by Techlm77</p>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+  
+      <script>
+  
+        var o = document.getElementById("one");
+        var to = document.getElementById("two");
+        to.style.display = 'none';
+  
+        function openBar() {
+          document.getElementById("mySidenav").style.borderColor = "#00ff9fbd";
+          document.getElementById("mySidenav").style.height = "900px";
+          document.getElementById("mySidenav").style.width = "1895px";
+          document.getElementById("mySidenav").style.margin = "-5% -29.5%";
+          document.getElementById("mySidenav").style.overflow = "hidden";
+  
+          o.style.display = 'none';
+          to.style.display = '';
+          var x = document.getElementById("topnav");
+          if (x.style.display === "none") {
+            x.style.display = "block";
+          }
+          else {
+            x.style.display = "none";
+          }
+        }
+  
+        function closeBar() {
+          document.getElementById("mySidenav").style.borderColor = "#ff00";
+          document.getElementById("mySidenav").style.height = "500px";
+          document.getElementById("mySidenav").style.width = "650px";
+          document.getElementById("mySidenav").style.overflow = "hidden";
+          document.getElementById("mySidenav").style.margin = "0% 0%";
+  
+          o.style.display = '';
+          to.style.display = 'none';
+          var x = document.getElementById("topnav");
+          if (x.style.display === "none") {
+            x.style.display = "block";
+          }
+          else {
+            x.style.display = "none";
+          }
+        }
+      </script>
+  
+  </div>
+
+</body>
+
+</html>
