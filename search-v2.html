@@ -6,201 +6,200 @@
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="google-site-verification" content="cFPwbACVGqP7ncOq87mwe9GhqWS3jNBTUseURQRLWNw"/>
+      <style>
+
+        @keyframes slideInFromLeft {
+          0% {
+            transform: translateX(-15px);
+            opacity: 0;
+          }
+          100% {
+            transform: translateX(0);
+            opacity: 1;
+          }
+        }
+        
+        div {  
+          animation: 0.8s ease-out 0s 1 slideInFromLeft;
+        }
+    
+        body {
+          background-color: #202020;
+          padding: 5px;
+          color:#00ff9d;
+          font-family: "Lato", sans-serif;
+        } 
+    
+        a {
+          transition: 0.2s;
+        }
+    
+        a:hover  {
+          border-radius: 10px;
+          background-color: rgb(29, 161, 242, 0.1);
+        }
+    
+        .header { 
+          grid-area: header;
+        }
+    
+        .main { 
+          grid-area: main;
+        }
+    
+        .footer {
+          grid-area: footer;
+          text-align: center;
+        }
+    
+        .header {
+          text-align: center;
+        }
+    
+        .grid-container {
+          display: grid;
+          grid-template-areas:
+            'menu header header header header header right'
+            'menu main main main main main right'
+            'footer footer footer footer footer footer footer';
+          grid-gap: 1px;
+          background-size: 100%;
+        }
+    
+        .grid-container > div {
+          padding: 30px 10;
+          font-size: 30px;
+        }
+    
+        .topnav {
+          overflow: hidden;
+          background-color: #202020;
+          border-radius: 25px;
+          border: 2px solid #9400FF;
+          transition: 0.5s;
+        }
+    
+        .topnav a {
+          float: left;
+          color: #00ff9fbd;
+          text-align: center;
+          padding: 10px;
+          text-decoration: none;
+          font-size: 18px;
+          border-radius: 25px;
+          border: 2px solid #20202000;
+        }
+    
+        .topnav a:hover {
+          background-color: #9500ff69;
+          color: #00ff9fbd;
+        }
+    
+        .topnav a:hover svg {
+          animation: iconJump 0.5s ease-in-out 1;
+        }
+    
+        @keyframes iconJump {
+          0% {
+              transform: none;
+          }
+          50% {
+              transform: translateY(-.5em);
+          }
+          100% {
+              transform: none;
+          }
+        }
+    
+        .topnav a.active {
+          background-color: #00ff9fbd;
+          color: #000000;
+        }
+    
+        * {
+          Margin: 0;
+        }
+    
+        .mobile_device_480px {
+            display: none;
+        }
+    
+        @media only screen and (max-device-width: 480px) {
+          .mobile_device_480px {
+              display: block;
+          }
+          .desktop {
+              display: none;
+          }
+        } 
+    
+        .gsc-input-box-hover, .gsc-input-box-focus, .gsc-search-button-v2, .gsc-results-wrapper-visible {
+          border-radius: 25px !important;
+          border: 2px solid #9400FF !important;
+          background-color: #202020;
+        }
+    
+        .gsc-input-box {
+          border-radius: 25px !important;
+          border: 2px solid #9400FF !important;
+          background-color: #111;
+        }
+    
+        .gsc-input {
+          background-color: transparent;
+          color: #00ff9d;
+        }
+    
+        .gsc-richsnippet-showsnippet-label {
+          color: #00ff9d;
+        }
+    
+        .gsc-above-wrapper-area {
+          border-bottom: 1px solid #e9e9e900;
+          padding: 10px 0px 5px 35%;
+        }
+    
+        .gsc-search-button-v2 svg {
+          fill: #00ff9d;
+        }
+    
+        .gsc-results-wrapper-overlay, .gsc-results-wrapper-visible {
+          transition: 0.5s !important;
+          scrollbar-width: none !important;
+          width: 1000px !important;
+          margin-left: 10.4% !important;
+          height: 845px !important;
+          background-color: #202020 !important;
+          margin-top: -20px !important;
+        }
+    
+        .gsc-modal-background-image-visible {
+          transition: 0.5s;
+        }
+    
+        .gsc-modal-background-image-visible {
+          opacity: 1;
+          display: block;
+          background: #202020de; 
+        }
+    
+        .gsc-wrapper {
+          position: relative;
+          display: block;
+        }
+    
+        .gsc-completion-container {
+          font-family: Roboto, sans-serif;
+          font-size: 16px;
+          background: #202020;
+          border: 1px solid #ccc;
+        }
+    
+        </style>
+    
   </head>
   
   <body>
-
-    <style>
-
-    @keyframes slideInFromLeft {
-      0% {
-        transform: translateX(-15px);
-        opacity: 0;
-      }
-      100% {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
-    
-    div {  
-      animation: 0.8s ease-out 0s 1 slideInFromLeft;
-    }
-
-    body {
-      background-color: #202020;
-      padding: 5px;
-      color:#00ff9d;
-      font-family: "Lato", sans-serif;
-    } 
-
-    a {
-      transition: 0.2s;
-    }
-
-    a:hover  {
-      border-radius: 10px;
-      background-color: rgb(29, 161, 242, 0.1);
-    }
-
-    .header { 
-      grid-area: header;
-    }
-
-    .main { 
-      grid-area: main;
-    }
-
-    .footer {
-      grid-area: footer;
-      text-align: center;
-    }
-
-    .header {
-      text-align: center;
-    }
-
-    .grid-container {
-      display: grid;
-      grid-template-areas:
-        'menu header header header header header right'
-        'menu main main main main main right'
-        'footer footer footer footer footer footer footer';
-      grid-gap: 1px;
-      background-size: 100%;
-    }
-
-    .grid-container > div {
-      padding: 30px 10;
-      font-size: 30px;
-    }
-
-    .topnav {
-      overflow: hidden;
-      background-color: #202020;
-      border-radius: 25px;
-      border: 2px solid #9400FF;
-      transition: 0.5s;
-    }
-
-    .topnav a {
-      float: left;
-      color: #00ff9fbd;
-      text-align: center;
-      padding: 10px;
-      text-decoration: none;
-      font-size: 18px;
-      border-radius: 25px;
-      border: 2px solid #20202000;
-    }
-
-    .topnav a:hover {
-      background-color: #9500ff69;
-      color: #00ff9fbd;
-    }
-
-    .topnav a:hover svg {
-      animation: iconJump 0.5s ease-in-out 1;
-    }
-
-    @keyframes iconJump {
-      0% {
-          transform: none;
-      }
-      50% {
-          transform: translateY(-.5em);
-      }
-      100% {
-          transform: none;
-      }
-    }
-
-    .topnav a.active {
-      background-color: #00ff9fbd;
-      color: #000000;
-    }
-
-    * {
-      Margin: 0;
-    }
-
-    .mobile_device_480px {
-        display: none;
-    }
-
-    @media only screen and (max-device-width: 480px) {
-      .mobile_device_480px {
-          display: block;
-      }
-      .desktop {
-          display: none;
-      }
-    } 
-
-    .gsc-input-box-hover, .gsc-input-box-focus, .gsc-search-button-v2, .gsc-results-wrapper-visible {
-      border-radius: 25px !important;
-      border: 2px solid #9400FF !important;
-      background-color: #202020;
-    }
-
-    .gsc-input-box {
-      border-radius: 25px !important;
-      border: 2px solid #9400FF !important;
-      background-color: #111;
-    }
-
-    .gsc-input {
-      background-color: transparent;
-      color: #00ff9d;
-    }
-
-    .gsc-richsnippet-showsnippet-label {
-      color: #00ff9d;
-    }
-
-    .gsc-above-wrapper-area {
-      border-bottom: 1px solid #e9e9e900;
-      padding: 10px 0px 5px 35%;
-    }
-
-    .gsc-search-button-v2 svg {
-      fill: #00ff9d;
-    }
-
-    .gsc-results-wrapper-overlay, .gsc-results-wrapper-visible {
-      transition: 0.5s !important;
-      scrollbar-width: none !important;
-      width: 1000px !important;
-      margin-left: 10.4% !important;
-      height: 845px !important;
-      background-color: #202020 !important;
-      margin-top: -20px !important;
-    }
-
-    .gsc-modal-background-image-visible {
-      transition: 0.5s;
-    }
-
-    .gsc-modal-background-image-visible {
-      opacity: 1;
-      display: block;
-      background: #202020de; 
-    }
-
-    .gsc-wrapper {
-      position: relative;
-      display: block;
-    }
-
-    .gsc-completion-container {
-      font-family: Roboto, sans-serif;
-      font-size: 16px;
-      background: #202020;
-      border: 1px solid #ccc;
-    }
-
-    </style>
-
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
     

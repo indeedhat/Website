@@ -4,110 +4,108 @@
       <title>Home Page</title>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style>
+
+        body {
+          background-color: #202020;
+          padding: 5px;
+          color:#00ff9d;
+          font-family: "Lato", sans-serif;
+        } 
+    
+        a {
+          transition: 0.2s;
+        }
+    
+        a:hover  {
+          border-radius: 10px;
+          background-color: rgb(29, 161, 242, 0.1);
+        }
+    
+        .header { 
+          grid-area: header;
+          text-align: center;
+        }
+    
+        .main { 
+          grid-area: main;
+          text-align: center;
+        }
+    
+        .footer {
+          grid-area: footer;
+          text-align: center;
+        }
+    
+        .header {
+          text-align: center;
+        }
+    
+        .grid-container {
+          display: grid;
+          grid-template-areas:
+            'menu header header header header header right'
+            'menu main main main main main right'
+            'footer footer footer footer footer footer footer';
+          grid-gap: 1px;
+          background-size: 100%;
+        }
+    
+        .grid-container > div {
+          padding: 30px 10;
+          font-size: 30px;
+        }
+    
+        .topnav {
+          overflow: hidden;
+          background-color: #202020;
+          border-radius: 25px;
+          border: 2px solid #9400FF;
+          transition: 0.5s;
+        }
+    
+        .topnav a {
+          float: left;
+          color: #00ff9fbd;
+          text-align: center;
+          padding: 10px;
+          text-decoration: none;
+          font-size: 18px;
+          border-radius: 25px;
+          border: 2px solid #20202000;
+        }
+    
+        .topnav a:hover {
+          background-color: #9500ff69;
+          color: #00ff9fbd;
+        }
+    
+        .topnav a.active {
+          background-color: #00ff9fbd;
+          color: #000000;
+        }
+    
+        * {
+          Margin: 0;
+        }
+    
+        .mobile_device_480px {
+            display: none;
+        }
+    
+        @media only screen and (max-device-width: 480px) {
+          .mobile_device_480px {
+              display: block;
+          }
+          .desktop {
+              display: none;
+          }
+        } 
+    
+        </style>
   </head>
   
   <body>
-
-    <style>
-
-    body {
-      background-color: #202020;
-      padding: 5px;
-      color:#00ff9d;
-      font-family: "Lato", sans-serif;
-    } 
-
-    a {
-      transition: 0.2s;
-    }
-
-    a:hover  {
-      border-radius: 10px;
-      background-color: rgb(29, 161, 242, 0.1);
-    }
-
-    .header { 
-      grid-area: header;
-      text-align: center;
-    }
-
-    .main { 
-      grid-area: main;
-      text-align: center;
-    }
-
-    .footer {
-      grid-area: footer;
-      text-align: center;
-    }
-
-    .header {
-      text-align: center;
-    }
-
-    .grid-container {
-      display: grid;
-      grid-template-areas:
-        'menu header header header header header right'
-        'menu main main main main main right'
-        'footer footer footer footer footer footer footer';
-      grid-gap: 1px;
-      background-size: 100%;
-    }
-
-    .grid-container > div {
-      padding: 30px 10;
-      font-size: 30px;
-    }
-
-    .topnav {
-      overflow: hidden;
-      background-color: #202020;
-      border-radius: 25px;
-      border: 2px solid #9400FF;
-      transition: 0.5s;
-    }
-
-    .topnav a {
-      float: left;
-      color: #00ff9fbd;
-      text-align: center;
-      padding: 10px;
-      text-decoration: none;
-      font-size: 18px;
-      border-radius: 25px;
-      border: 2px solid #20202000;
-    }
-
-    .topnav a:hover {
-      background-color: #9500ff69;
-      color: #00ff9fbd;
-    }
-
-    .topnav a.active {
-      background-color: #00ff9fbd;
-      color: #000000;
-    }
-
-    * {
-      Margin: 0;
-    }
-
-    .mobile_device_480px {
-        display: none;
-    }
-
-    @media only screen and (max-device-width: 480px) {
-      .mobile_device_480px {
-          display: block;
-      }
-      .desktop {
-          display: none;
-      }
-    } 
-
-    </style>
-
     <div id="content"></div>
     <div class="desktop">
 
