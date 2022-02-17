@@ -1,0 +1,14 @@
+{
+  "name": "Techlm77",
+  "short_name": "Tec",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff",
+  "lang": "en-GB",
+  "description": "Digital media",
+  "prefer_related_applications": false,
+  "theme_color": "#fff",
+  "scope": "/",
+  "orientation": "portrait-primary"
+}
+  
