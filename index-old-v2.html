@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    #text {
+      position: absolute;
+      z-index: 9;
+      border: 15px solid #fff;
+      border-style: double;
+    }
+
+    #obengine {
+      position: absolute;
+      z-index: 9;
+      border: 15px solid #fff;
+      border-style: double;
+      border-radius: 25px;
+    }
+
+    #obuploader {
+      position: absolute;
+      z-index: 9;
+      border: 15px solid #fff;
+      border-style: double;
+      border-radius: 25px;
+    }
+
+    #obmaze {
+      position: absolute;
+      z-index: 9;
+      border: 15px solid #fff;
+      border-style: double;
+      border-radius: 25px;
+    }
+
+    #obproject {
+      position: absolute;
+      z-index: 9;
+      border: 15px solid #fff;
+      border-style: double;
+      border-radius: 25px;
+    }
+
+    body {
+      overflow-y: hidden;
+      overflow-x: hidden;
+    }
+
+    #titleheader {
+      cursor: move;
+      z-index: 10;
+      color: #0004ff;
+      font-weight: bold;
+      width: 160px;
+      text-align: center;
+    }
+
+    body {
+      font-family: "Lato", sans-serif;
+    }
+
+    p {
+      border-radius: 25px;
+      border: 0px solid #00ffa6;
+    }
+
+    .Nav1 {
+      animation: slideRight1 3s 1;
+    }
+
+    @keyframes slideRight1 {
+      0% {
+        margin-left: -60px;
+        opacity: 0;
+      }
+
+      10% {
+        margin-left: 30px;
+        opacity: 50%;
+      }
+
+      20% {
+        margin-left: 0;
+        opacity: 100%;
+      }
+
+      30% {
+        margin-left: 0;
+      }
+
+      40% {
+        margin-left: 0;
+      }
+
+      50% {
+        margin-left: 0;
+      }
+
+      60% {
+        margin-left: 0;
+      }
+
+      70% {
+        margin-left: 0;
+      }
+
+      80% {
+        margin-left: 0;
+      }
+
+      90% {
+        margin-left: 0;
+      }
+
+      100% {
+        margin-left: 0;
+      }
+    }
+
+    .Nav2 {
+      animation: slideRight2 3s 1;
+    }
+
+    @keyframes slideRight2 {
+      0% {
+        margin-left: -60px;
+        opacity: 0;
+      }
+
+      10% {
+        margin-left: -60px;
+        opacity: 0;
+      }
+
+      20% {
+        margin-left: 30px;
+        opacity: 50%;
+      }
+
+      30% {
+        margin-left: 0;
+        opacity: 100%;
+      }
+
+      40% {
+        margin-left: 0;
+      }
+
+      50% {
+        margin-left: 0;
+      }
+
+      60% {
+        margin-left: 0;
+      }
+
+      70% {
+        margin-left: 0;
+      }
+
+      80% {
+        margin-left: 0;
+      }
+
+      90% {
+        margin-left: 0;
+      }
+
+      100% {
+        margin-left: 0;
+      }
+    }
+
+    .Nav3 {
+      animation: slideRight3 3s 1;
+    }
+
+    @keyframes slideRight3 {
+      0% {
+        margin-left: -60px;
+        opacity: 0;
+      }
+
+      10% {
+        margin-left: -60px;
+        opacity: 0;
+
+      }
+
+      20% {
+        margin-left: -60px;
+        opacity: 0;
+      }
+
+      30% {
+        margin-left: 30px;
+        opacity: 50%;
+      }
+
+      40% {
+        margin-left: 0;
+        opacity: 100%;
+      }
+
+      50% {
+        margin-left: 0;
+      }
+
+      60% {
+        margin-left: 0;
+      }
+
+      70% {
+        margin-left: 0;
+      }
+
+      80% {
+        margin-left: 0;
+      }
+
+      90% {
+        margin-left: 0;
+      }
+
+      100% {
+        margin-left: 0;
+      }
+    }
+
+    .Nav4 {
+      animation: slideRight4 3s 1;
+    }
+
+    @keyframes slideRight4 {
+      0% {
+        margin-left: -60px;
+        opacity: 0;
+      }
+
+      10% {
+        margin-left: -60px;
+        opacity: 0;
+      }
+
+      20% {
+        margin-left: -60px;
+        opacity: 0;
+      }
+
+      30% {
+        margin-left: -60px;
+        opacity: 0;
+      }
+
+      40% {
+        margin-left: 30px;
+        opacity: 50%;
+      }
+
+      50% {
+        margin-left: 0;
+        opacity: 100%;
+      }
+
+      60% {
+        margin-left: 0;
+      }
+
+      70% {
+        margin-left: 0;
+      }
+
+      80% {
+        margin-left: 0;
+      }
+
+      90% {
+        margin-left: 0;
+      }
+
+      100% {
+        margin-left: 0;
+      }
+    }
+
+    .active {
+      width: 845px;
+      height: 704px;
+      border: 15px solid #fff;
+      animation: myfirst linear 5s infinite;
+    }
+
+    @keyframes myfirst {
+      0% {
+        border: 15px solid rgb(0, 255, 157);
+      }
+
+      25% {
+        border: 15px solid rgba(47, 0, 255, 0.501);
+      }
+
+      50% {
+        border: 15px solid rgba(255, 255, 255, 0.104);
+      }
+
+      75% {
+        border: 15px solid rgba(85, 0, 255, 0.501);
+      }
+
+      100% {
+        border: 15px solid rgb(0, 255, 157);
+      }
+    }
+
+    .not-active {
+      width: 845px;
+      height: 704px;
+      border: 15px solid rgba(255, 255, 255, 0.165);
+    }
+
+    .wrapper {
+      opacity: 0;
+      visibility: visible;
+      pointer-events: none;
+      display: block;
+      transition: all 1s cubic-bezier(0.18, 0.89, 0.32, 1.28) 0s;
+    }
+
+    .inner {
+      width: 845px;
+      height: 705px;
+      top: 145px;
+      left: 1028px;
+      cursor: grab;
+    }
+
+    .iframe {
+      width: 1055px;
+      height: 881px;
+      border: 0px solid rgb(255, 255, 255);
+      margin: -88px 0px 71px -105px;
+      transform: scale(0.8);
+      border-radius: 10px;
+    }
+
+    .title {
+      z-index: 10;
+      color: #0004ff;
+      background-color: white;
+      font-size: 12px;
+      margin-top: -143px;
+    }
+  </style>
+</head>
+
+<body style="background-color: #181818;">
+
+  <ul class="sidenav" style="width: 150px;padding: 25px;">
+    <li class="Nav1" id="opengine"
+      style="font-size: 15px; cursor: pointer; color: #ffffff;width: max-content; list-style: none;"
+      onclick="openEngine()">Search Engine</li>
+    <li id="clengine" style="font-size: 15px; cursor: pointer;color: #ffffff;width: max-content; list-style: none;"
+      onclick="closeEngine()">Close Search Engine</li>
+    <br>
+    <li class="Nav2" id="opuploader"
+      style="font-size: 15px; cursor: pointer; color: #ffffff;width: max-content; list-style: none;"
+      onclick="openUploader()">File Uploader</li>
+    <li id="cluploader" style="font-size: 15px; cursor: pointer;color: #ffffff;width: max-content; list-style: none;"
+      onclick="closeUploader()">Close File Uploader</li>
+    <br>
+    <li class="Nav3" id="opmaze"
+      style="font-size: 15px; cursor: pointer; color: #ffffff;width: max-content; list-style: none;"
+      onclick="openMaze()">Terminal</li>
+    <li id="clmaze" style="font-size: 15px; cursor: pointer;color: #ffffff;width: max-content; list-style: none;"
+      onclick="closeMaze()">Close Terminal</li>
+    <br>
+    <li class="Nav4" id="opproject"
+      style="font-size: 15px; cursor: pointer; color: #ffffff;width: max-content; list-style: none;"
+      onclick="openProject()">Projects</li>
+    <li id="clproject" style="font-size: 15px; cursor: pointer;color: #ffffff;width: max-content; list-style: none;"
+      onclick="closeProject()">Close Projects</li>
+  </ul>
+
+  <div id="Engine" class="wrapper">
+
+    <div class="not-active" class="inner" id="obengine">
+      <iframe id="search" class="iframe" src="search.html"></iframe>
+      <div style="float: left;margin-top: -740px;" id="titleheader">
+        <p id="Tengine" class="title">Search Engine</p>
+      </div>
+
+    </div>
+  </div>
+
+  </div>
+
+  <script>
+
+    var openen = document.getElementById("opengine");
+    var closeen = document.getElementById("clengine");
+    closeen.style.display = 'none';
+
+    function openEngine() {
+      document.getElementById("Engine").style.visibility = "visible";
+      document.getElementById("Engine").style.opacity = "1";
+      document.getElementById("Engine").style.pointerEvents = "auto";
+
+      openen.style.display = 'none';
+      closeen.style.display = '';
+    }
+
+    function closeEngine() {
+      document.getElementById("Engine").style.visibility = "hidden";
+      document.getElementById("Engine").style.opacity = "0";
+      document.getElementById("Engine").style.pointerEvents = "none";
+
+      openen.style.display = '';
+      closeen.style.display = 'none';
+    }
+  </script>
+
+  <script>
+
+    //Make the DIV element draggagle:
+    dragElement(document.getElementById("obengine"));
+
+    function dragElement(elmnt) {
+      var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+      if (document.getElementById(elmnt.id + "header")) {
+        /* if present, the header is where you move the DIV from:*/
+        document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+      } else {
+        /* otherwise, move the DIV from anywhere inside the DIV:*/
+        elmnt.onmousedown = dragMouseDown;
+      }
+
+      function dragMouseDown(e) {
+        // change the paragraph (<p>) to I'm being dragged.
+        document.getElementById("Tengine").innerHTML = "I'm being dragged!!!";
+
+        document.getElementById("obengine").classList.remove('not-active');
+        document.getElementById("obengine").classList.add('active');
+
+        document.getElementById("obuploader").classList.add('not-active');
+        document.getElementById("obuploader").classList.remove('active');
+
+        document.getElementById("obmaze").classList.add('not-active');
+        document.getElementById("obmaze").classList.remove('active');
+
+        document.getElementById("obproject").classList.add('not-active');
+        document.getElementById("obproject").classList.remove('active');
+
+        document.getElementById("obengine").style.zIndex = "3";
+        document.getElementById("obuploader").style.zIndex = "2";
+        document.getElementById("obmaze").style.zIndex = "1";
+        document.getElementById("obproject").style.zIndex = "0";
+
+        document.getElementById("Tengine").style.marginTop = "725px";
+        // change the height from 740px to -724px which basically stays in the same position
+        document.getElementById("search").style.height = "0px";
+        document.getElementById("search").style.width = "0px";
+        document.getElementById("uploader").style.height = "0px";
+        document.getElementById("uploader").style.width = "0px";
+        document.getElementById("maze").style.height = "0px";
+        document.getElementById("maze").style.width = "0px";
+        document.getElementById("project").style.height = "0px";
+        document.getElementById("project").style.width = "0px";
+        document.getElementById("obengine").style.cursor = "grabbing";
+        e = e || window.event;
+        e.preventDefault();
+        // get the mouse cursor position at startup:
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        document.onmouseup = closeDragElement;
+        // call a function whenever the cursor moves:
+        document.onmousemove = elementDrag;
+      }
+
+      function elementDrag(e) {
+        e = e || window.event;
+        e.preventDefault();
+        // calculate the new cursor position:
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        // set the element's new position:
+        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+        elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+      }
+
+      function closeDragElement() {
+        /* stop moving when mouse button is released:*/
+
+        // change the paragraph (<p>) back to search once you left go on the mouse.
+        document.getElementById("Tengine").innerHTML = "Search Engine";
+        document.getElementById("Tengine").style.marginTop = "-143px";
+        document.getElementById("search").style.margin = "-88px 0px 71px -105px";
+        document.getElementById("search").style.height = "881px";
+        document.getElementById("search").style.width = "1055px";
+        document.getElementById("uploader").style.height = "881px";
+        document.getElementById("uploader").style.width = "1055px";
+        document.getElementById("maze").style.height = "881px";
+        document.getElementById("maze").style.width = "1055px";
+        document.getElementById("project").style.height = "881px";
+        document.getElementById("project").style.width = "1055px";
+        document.getElementById("search").style.transform = "scale(0.8)";
+        document.getElementById("obengine").style.cursor = "grab";
+        document.onmouseup = null;
+        document.onmousemove = null;
+      }
+    }
+  </script>
+
+  <br>
+
+  <div id="Uploader" class="wrapper">
+
+    <div class="not-active" class="inner" id="obuploader">
+      <iframe id="uploader" class="iframe" src="../Uploader/List-Add.php"></iframe>
+      <div style="float: left;margin-top: -740px;" id="titleheader">
+        <p id="Tuploader" class="title">File Uploader</p>
+      </div>
+
+    </div>
+  </div>
+
+  </div>
+
+  <script>
+
+    var openup = document.getElementById("opuploader");
+    var closeup = document.getElementById("cluploader");
+    closeup.style.display = 'none';
+
+    function openUploader() {
+      document.getElementById("Uploader").style.visibility = "visible";
+      document.getElementById("Uploader").style.opacity = "1";
+      document.getElementById("Uploader").style.pointerEvents = "auto";
+
+      openup.style.display = 'none';
+      closeup.style.display = '';
+    }
+
+    function closeUploader() {
+      document.getElementById("Uploader").style.visibility = "hidden";
+      document.getElementById("Uploader").style.opacity = "0";
+      document.getElementById("Uploader").style.pointerEvents = "none";
+
+      openup.style.display = '';
+      closeup.style.display = 'none';
+    }
+  </script>
+
+  <script>
+
+    //Make the DIV element draggagle:
+    dragElement(document.getElementById("obuploader"));
+
+    function dragElement(elmnt) {
+      var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+      if (document.getElementById(elmnt.id + "header")) {
+        /* if present, the header is where you move the DIV from:*/
+        document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+      } else {
+        /* otherwise, move the DIV from anywhere inside the DIV:*/
+        elmnt.onmousedown = dragMouseDown;
+      }
+
+      function dragMouseDown(e) {
+        // change the paragraph (<p>) to I'm being dragged.
+        document.getElementById("Tuploader").innerHTML = "I'm being dragged!!!";
+
+        document.getElementById("obengine").classList.add('not-active');
+        document.getElementById("obengine").classList.remove('active');
+
+        document.getElementById("obuploader").classList.remove('not-active');
+        document.getElementById("obuploader").classList.add('active');
+
+        document.getElementById("obmaze").classList.add('not-active');
+        document.getElementById("obmaze").classList.remove('active');
+
+        document.getElementById("obproject").classList.add('not-active');
+        document.getElementById("obproject").classList.remove('active');
+
+        document.getElementById("obengine").style.zIndex = "2";
+        document.getElementById("obuploader").style.zIndex = "3";
+        document.getElementById("obmaze").style.zIndex = "1";
+        document.getElementById("obproject").style.zIndex = "0";
+
+        document.getElementById("Tuploader").style.marginTop = "725px";
+        // change the height from 740px to -724px which basically stays in the same position
+        document.getElementById("search").style.height = "0px";
+        document.getElementById("search").style.width = "0px";
+        document.getElementById("uploader").style.height = "0px";
+        document.getElementById("uploader").style.width = "0px";
+        document.getElementById("maze").style.height = "0px";
+        document.getElementById("maze").style.width = "0px";
+        document.getElementById("project").style.height = "0px";
+        document.getElementById("project").style.width = "0px";
+        document.getElementById("obuploader").style.cursor = "grabbing";
+        e = e || window.event;
+        e.preventDefault();
+        // get the mouse cursor position at startup:
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        document.onmouseup = closeDragElement;
+        // call a function whenever the cursor moves:
+        document.onmousemove = elementDrag;
+      }
+
+      function elementDrag(e) {
+        e = e || window.event;
+        e.preventDefault();
+        // calculate the new cursor position:
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        // set the element's new position:
+        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+        elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+      }
+
+      function closeDragElement() {
+        /* stop moving when mouse button is released:*/
+
+        // change the paragraph (<p>) back to file uploader once you left go on the mouse.
+        document.getElementById("Tuploader").innerHTML = "File Uploader";
+        document.getElementById("Tuploader").style.marginTop = "-143px";
+        document.getElementById("uploader").style.margin = "-88px 0px 71px -105px";
+        document.getElementById("search").style.height = "881px";
+        document.getElementById("search").style.width = "1055px";
+        document.getElementById("uploader").style.height = "881px";
+        document.getElementById("uploader").style.width = "1055px";
+        document.getElementById("maze").style.height = "881px";
+        document.getElementById("maze").style.width = "1055px";
+        document.getElementById("project").style.height = "881px";
+        document.getElementById("project").style.width = "1055px";
+        document.getElementById("uploader").style.transform = "scale(0.8)";
+        document.getElementById("obuploader").style.cursor = "grab";
+        document.onmouseup = null;
+        document.onmousemove = null;
+      }
+    }
+  </script>
+
+  <br>
+
+  <div id="Maze" class="wrapper">
+
+    <div class="not-active" class="inner" id="obmaze">
+      <iframe id="maze" class="iframe" src="../Terminal/index.html"></iframe>
+
+      <div style="float: left;margin-top: -740px;" id="titleheader">
+        <p id="Tmaze" class="title">Terminal</p>
+      </div>
+
+    </div>
+  </div>
+
+  </div>
+
+  <script>
+
+    var openma = document.getElementById("opmaze");
+    var closema = document.getElementById("clmaze");
+    closema.style.display = 'none';
+
+    function openMaze() {
+      document.getElementById("Maze").style.visibility = "visible";
+      document.getElementById("Maze").style.opacity = "1";
+      document.getElementById("Maze").style.pointerEvents = "auto";
+
+      openma.style.display = 'none';
+      closema.style.display = '';
+    }
+
+    function closeMaze() {
+      document.getElementById("Maze").style.visibility = "hidden";
+      document.getElementById("Maze").style.opacity = "0";
+      document.getElementById("Maze").style.pointerEvents = "none";
+
+      openma.style.display = '';
+      closema.style.display = 'none';
+    }
+  </script>
+
+  <script>
+
+    //Make the DIV element draggagle:
+    dragElement(document.getElementById("obmaze"));
+
+    function dragElement(elmnt) {
+      var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+      if (document.getElementById(elmnt.id + "header")) {
+        /* if present, the header is where you move the DIV from:*/
+        document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+      } else {
+        /* otherwise, move the DIV from anywhere inside the DIV:*/
+        elmnt.onmousedown = dragMouseDown;
+      }
+
+      function dragMouseDown(e) {
+        // change the paragraph (<p>) to I'm being dragged.
+        document.getElementById("Tmaze").innerHTML = "I'm being dragged!!!";
+
+        document.getElementById("obengine").classList.add('not-active');
+        document.getElementById("obengine").classList.remove('active');
+
+        document.getElementById("obuploader").classList.add('not-active');
+        document.getElementById("obuploader").classList.remove('active');
+
+        document.getElementById("obmaze").classList.remove('not-active');
+        document.getElementById("obmaze").classList.add('active');
+
+        document.getElementById("obproject").classList.add('not-active');
+        document.getElementById("obproject").classList.remove('active');
+
+        document.getElementById("obengine").style.zIndex = "1";
+        document.getElementById("obuploader").style.zIndex = "2";
+        document.getElementById("obmaze").style.zIndex = "3";
+        document.getElementById("obproject").style.zIndex = "0";
+
+        document.getElementById("Tmaze").style.marginTop = "725px";
+        // change the height from 740px to -724px which basically stays in the same position
+        document.getElementById("search").style.height = "0px";
+        document.getElementById("search").style.width = "0px";
+        document.getElementById("uploader").style.height = "0px";
+        document.getElementById("uploader").style.width = "0px";
+        document.getElementById("maze").style.height = "0px";
+        document.getElementById("maze").style.width = "0px";
+        document.getElementById("project").style.height = "0px";
+        document.getElementById("project").style.width = "0px";
+        document.getElementById("obmaze").style.cursor = "grabbing";
+        e = e || window.event;
+        e.preventDefault();
+        // get the mouse cursor position at startup:
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        document.onmouseup = closeDragElement;
+        // call a function whenever the cursor moves:
+        document.onmousemove = elementDrag;
+      }
+
+      function elementDrag(e) {
+        e = e || window.event;
+        e.preventDefault();
+        // calculate the new cursor position:
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        // set the element's new position:
+        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+        elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+      }
+
+      function closeDragElement() {
+        /* stop moving when mouse button is released:*/
+
+        // change the paragraph (<p>) back to Maze once you left go on the mouse.
+        document.getElementById("Tmaze").innerHTML = "Maze";
+        document.getElementById("Tmaze").style.marginTop = "-143px";
+        document.getElementById("maze").style.margin = "-88px 0px 71px -105px";
+        document.getElementById("search").style.height = "881px";
+        document.getElementById("search").style.width = "1055px";
+        document.getElementById("uploader").style.height = "881px";
+        document.getElementById("uploader").style.width = "1055px";
+        document.getElementById("maze").style.height = "881px";
+        document.getElementById("maze").style.width = "1055px";
+        document.getElementById("project").style.height = "881px";
+        document.getElementById("project").style.width = "1055px";
+        document.getElementById("maze").style.transform = "scale(0.8)";
+        document.getElementById("obmaze").style.cursor = "grab";
+        document.onmouseup = null;
+        document.onmousemove = null;
+      }
+    }
+  </script>
+
+  <br>
+
+  <div id="Project" class="wrapper">
+
+    <div class="not-active" class="inner" id="obproject">
+      <iframe id="project" class="iframe" src="Projects.html"></iframe>
+
+      <div style="float: left;margin-top: -740px;" id="titleheader">
+        <p id="Tproject" class="title">Projects</p>
+      </div>
+
+    </div>
+  </div>
+
+  </div>
+
+  <script>
+
+    var openpr = document.getElementById("opproject");
+    var closepr = document.getElementById("clproject");
+    closepr.style.display = 'none';
+
+    function openProject() {
+      document.getElementById("Project").style.visibility = "visible";
+      document.getElementById("Project").style.opacity = "1";
+      document.getElementById("Project").style.pointerEvents = "auto";
+
+      openpr.style.display = 'none';
+      closepr.style.display = '';
+    }
+
+    function closeProject() {
+      document.getElementById("Project").style.visibility = "hidden";
+      document.getElementById("Project").style.opacity = "0";
+      document.getElementById("Project").style.pointerEvents = "none";
+
+      openpr.style.display = '';
+      closepr.style.display = 'none';
+    }
+  </script>
+
+  <script>
+
+    //Make the DIV element draggagle:
+    dragElement(document.getElementById("obproject"));
+
+    function dragElement(elmnt) {
+      var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+      if (document.getElementById(elmnt.id + "header")) {
+        /* if present, the header is where you move the DIV from:*/
+        document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+      } else {
+        /* otherwise, move the DIV from anywhere inside the DIV:*/
+        elmnt.onmousedown = dragMouseDown;
+      }
+
+      function dragMouseDown(e) {
+        // change the paragraph (<p>) to I'm being dragged.
+        document.getElementById("Tproject").innerHTML = "I'm being dragged!!!";
+
+        document.getElementById("obengine").classList.remove('active');
+        document.getElementById("obengine").classList.add('not-active');
+
+        document.getElementById("obuploader").classList.remove('active');
+        document.getElementById("obuploader").classList.add('not-active');
+
+        document.getElementById("obmaze").classList.remove('active');
+        document.getElementById("obmaze").classList.add('not-active');
+
+        document.getElementById("obproject").classList.remove('not-active');
+        document.getElementById("obproject").classList.add('active');
+
+        document.getElementById("obengine").style.zIndex = "0";
+        document.getElementById("obuploader").style.zIndex = "1";
+        document.getElementById("obmaze").style.zIndex = "2";
+        document.getElementById("obproject").style.zIndex = "3";
+
+        document.getElementById("Tproject").style.marginTop = "725px";
+        // change the height from 740px to -724px which basically stays in the same position
+        document.getElementById("search").style.height = "0px";
+        document.getElementById("search").style.width = "0px";
+        document.getElementById("uploader").style.height = "0px";
+        document.getElementById("uploader").style.width = "0px";
+        document.getElementById("maze").style.height = "0px";
+        document.getElementById("maze").style.width = "0px";
+        document.getElementById("project").style.height = "0px";
+        document.getElementById("project").style.width = "0px";
+        document.getElementById("obproject").style.cursor = "grabbing";
+        e = e || window.event;
+        e.preventDefault();
+        // get the mouse cursor position at startup:
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        document.onmouseup = closeDragElement;
+        // call a function whenever the cursor moves:
+        document.onmousemove = elementDrag;
+      }
+
+      function elementDrag(e) {
+        e = e || window.event;
+        e.preventDefault();
+        // calculate the new cursor position:
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        // set the element's new position:
+        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+        elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+      }
+
+      function closeDragElement() {
+        /* stop moving when mouse button is released:*/
+
+        // change the paragraph (<p>) back to Projects once you left go on the mouse.
+        document.getElementById("Tproject").innerHTML = "Project";
+        document.getElementById("Tproject").style.marginTop = "-143px";
+        document.getElementById("project").style.margin = "-88px 0px 71px -105px";
+        document.getElementById("search").style.height = "881px";
+        document.getElementById("search").style.width = "1055px";
+        document.getElementById("uploader").style.height = "881px";
+        document.getElementById("uploader").style.width = "1055px";
+        document.getElementById("maze").style.height = "881px";
+        document.getElementById("maze").style.width = "1055px";
+        document.getElementById("project").style.height = "881px";
+        document.getElementById("project").style.width = "1055px";
+        document.getElementById("project").style.transform = "scale(0.8)";
+        document.getElementById("obproject").style.cursor = "grab";
+        document.onmouseup = null;
+        document.onmousemove = null;
+      }
+    }
+  </script>
+
+</body>
+
+</html>

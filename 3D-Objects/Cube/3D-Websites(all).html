@@ -1,0 +1,87 @@
+<html>
+  
+  <head>
+    <title>3D Cube</title>
+  </head>
+
+  <body style="background-color: #202020;">
+
+    <div class="cube-container">
+      <div class="cube">
+      <figure class="side front" style="text-align: center;"><iframe width="100%" height="100%" src="/Custom Games/Maze/"></iframe></figure>
+        <figure class="side back" style="text-align: center;"><iframe width="100%" height="100%" src="/"></iframe></figure>
+        <figure class="side left" style="text-align: center;"><iframe id="curioframe" width="100%" height="100%" src="https://www.thecynicslantern.net/stack/?nolink=1"></iframe></figure>
+        <figure class="side right" style="text-align: center;"><iframe width="100%" height="100%" src="/button.html"></iframe></figure>
+        <figure class="side top" style="text-align: center;"><iframe width="100%" height="100%" src="/Notification.html"></iframe></figure>
+        <figure class="side bottom" style="text-align: center;"><iframe width="100%" height="100%" src="3D-Cube(all).html"></iframe></figure>
+      </div>
+    </div>
+    
+    <style>
+      
+      body {
+        margin:0 auto;
+      }
+
+      p, h1 {
+        color: #fff;
+      }
+
+      .Controls {
+        width: 216px;
+        margin-top: 25px;
+        margin-left: -10px;
+      }
+
+      .cube-container {
+        height: 250px;
+        top: 40%;
+        left: 40%;
+        perspective: 1000px;
+        perspective-origin: 65%;
+        position: absolute;
+        width: 280px;
+      }
+
+      .cube {  
+        transform-style: preserve-3d;
+        animation: spin 5s linear infinite;
+        height: 94%;
+      }
+
+      .side {
+        height: 200px;
+        position: absolute;
+        width: 200px;
+      }
+
+      .front {
+        transform: translateZ(100px);
+      }
+      .back {
+        transform: rotateX(180deg) translateZ(100px);
+      }
+      .left {
+        transform: rotateY(-90deg) translateZ(100px);
+      }
+      .right {
+        transform: rotateY(90deg) translateZ(100px);
+      }
+      .top {
+        transform: rotateX(90deg) translateZ(100px);
+      }
+      .bottom {
+        transform: rotateX(-90deg) translateZ(100px);
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotateY(-360deg) rotateZ(-360deg);
+        }
+      }
+
+    </style>
+
+  </body>
+
+</html>

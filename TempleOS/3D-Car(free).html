@@ -1,0 +1,188 @@
+<html>
+  
+  <head>
+    <title>3D Cube</title>
+    <link href="3D-Car.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body style="background-color: #ff5;overflow-x: hidden;overflow-y: hidden;">
+
+    <div class="Controls">
+      <h1 style="margin-left: 22%;">Controls</h1>
+      <p style="margin-left: 22%;">W = Cube all directions</p>
+      <p style="margin-left: 22%;">A = Cube camera free</p>
+      <p style="margin-left: 22%;">S = Car all directions</p>
+      <p style="margin-left: 22%;">D = Car camera free</p>
+    </div>
+
+    <a href="3D-Cube(all).html" data-keybind="w"></a>
+    <a href="3D-Cube(free).html" data-keybind="a"></a>
+    <a href="3D-Car(all).html" data-keybind="s"></a>
+    <a href="3D-Car(free).html" data-keybind="d"></a>
+
+    <div class="scene">
+      <div class="cube-container-free">
+        <div class="cube-free">
+          <figure class="side frontwheel"></figure>
+          <figure class="side frontwheel2"></figure>
+          <figure class="side backwheel"></figure>
+          <figure class="side backwheel2"></figure>
+          <figure class="side frontwheel3"></figure>
+          <figure class="side frontwheel4"></figure>
+          <figure class="side backwheel3"></figure>
+          <figure class="side backwheel4"></figure>
+          <figure class="side topfront"></figure>
+          <figure class="side topfront2"></figure>
+          <figure class="side topback"></figure>
+          <figure class="side topback2"></figure>
+          <figure class="side bottomfront"></figure>
+          <figure class="side bottomfront2"></figure>
+          <figure class="side bottomback"></figure>
+          <figure class="side bottomback2"></figure>
+          <figure class="side front"></figure>
+          <figure class="side leftwheel"></figure>
+          <figure class="side topwheel"></figure>
+          <figure class="side topwheel2"></figure>
+          <figure class="side leftwheel2"></figure>
+          <figure class="side leftwheel3"></figure>
+          <figure class="side leftwheel4"></figure>
+          <figure class="side leftwheel5"></figure>
+          <figure class="side leftwheel6"></figure>
+          <figure class="side behindfront"></figure>
+          <figure class="side behindfront2"></figure>
+          <figure class="side behindback"></figure>
+          <figure class="side behindback2"></figure>
+          <figure class="side back"></figure>
+          <figure class="side back2"></figure>
+          <figure class="side back3"></figure>
+          <figure class="side left"></figure>
+          <figure class="side right"></figure>
+          <figure class="side leftfrontpanel"></figure>
+          <figure class="side rightfrontpanel"></figure>
+          <figure class="side leftfrontpanel2"></figure>
+          <figure class="side rightfrontpanel2"></figure>
+          <figure class="side leftfrontpanel3"></figure>
+          <figure class="side rightfrontpanel3"></figure>
+          <figure class="side left2"></figure>
+          <figure class="side right2"></figure>
+          <figure class="side top"></figure>
+          <figure class="side top2"></figure>
+          <figure class="side topleft"></figure>
+          <figure class="side topright"></figure>
+          <figure class="side bottom2"></figure>
+          <figure class="side window"></figure>
+          <figure class="side roof"></figure>
+          <figure class="side bottom"></figure>
+          <figure class="side bottom3"></figure>
+          <figure class="side bottom4"></figure>
+          <figure class="triangle triangle"></figure>
+          <figure class="triangle triangle2"></figure>
+        </div>
+      </div>
+    </div>
+    
+    <style>
+
+      .scene {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+
+    </style>
+
+    <script>
+
+      document.body.addEventListener("keypress", ev => {
+        const link = document.querySelector(`[data-keybind=${ev.key}`);
+        if (link) location.href = link.getAttribute("href");
+      });
+
+      window.onload = function() {
+
+        var scene = document.querySelector('.scene');
+        var cube = document.querySelector('.cube-free');
+
+        var mouse = {
+          _x: 0,
+          _y: 0,
+          x: 0,
+          y: 0,
+          updatePosition: function(event) {
+            var e = event || window.event;
+            this.x = e.clientX - this._x;
+            this.y = (e.clientY - this._y) * -1;
+          },
+          setOrigin: function(e) {
+            this._x = e.offsetLeft + Math.floor(e.offsetWidth/2);
+            this._y = e.offsetTop + Math.floor(e.offsetHeight/2);
+          },
+          show: function() { return '(' + this.x + ', ' + this.y + ')'; }
+        }
+      
+        // Track the mouse position relative to the center of the scene.
+        mouse.setOrigin(scene);
+      
+        //------------
+      
+        var counter = 0;
+        var refreshRate = 4;
+        var isTimeToUpdate = function() {
+          return counter++ % refreshRate === 0;
+        };
+      
+        //------------
+      
+        var onMouseMoveHandler = function(event) {
+          if (isTimeToUpdate()) {
+            update(event);
+          }
+        };
+      
+        var onMouseLeaveHandler = function(event) {
+          let style = "scale(0.8)";
+          cube.style.transform = style;
+          cube.style.webkitTransform = style;
+          cube.style.mozTransform = style;
+          cube.style.msTransform = style;
+          cube.style.oTransform = style;
+        }
+
+        //------------
+      
+        var update = function(event) {
+          mouse.updatePosition(event);
+          updateTransformStyle(
+            (mouse.y / scene.offsetHeight * 2).toFixed(2),
+            (mouse.x / scene.offsetWidth * 2).toFixed(2)
+          );
+        };
+      
+        //------------
+      
+        var updateTransformStyle = function(x, y) {
+          var trans = -1/2 * cube.offsetWidth;
+          var style = "translateZ(" + trans + "px) rotateX(" + x * 90 + "deg) rotateY(" + y * 180 + "deg)";
+          cube.style.transform = style;
+          cube.style.webkitTransform = style;
+          cube.style.mozTransform = style;
+          cube.style.msTransform = style;
+          cube.style.oTransform = style;
+        };
+      
+        //------------
+
+        scene.onmouseleave = onMouseLeaveHandler;
+        scene.onmousemove = onMouseMoveHandler;
+      
+        //------------
+      
+      }
+    
+    </script>
+
+  </body>
+
+</html>

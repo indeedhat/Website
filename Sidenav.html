@@ -1,0 +1,148 @@
+<html>
+
+<head>
+    <title>sideNav</title>
+</head>
+
+<body>
+
+    <style>
+        body {
+            background-color: #2a2826;
+            padding: 5px;
+            color: #00ffbfb6;
+            font-family: "Lato", sans-serif;
+        }
+
+        .header {
+            grid-area: header;
+        }
+
+        .menu {
+            grid-area: menu;
+        }
+
+        .main {
+            grid-area: main;
+        }
+
+        .right {
+            grid-area: right;
+        }
+
+        .footer {
+            grid-area: footer;
+            text-align: center;
+        }
+
+        .header {
+            text-align: center;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-areas:
+                'menu header header header header header right'
+                'menu main main main main main right'
+                'footer footer footer footer footer footer footer';
+            grid-gap: 1px;
+            background-size: 100%;
+        }
+
+        .grid-container>div {
+            padding: 30px 10;
+            font-size: 30px;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #2a2826b6;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            border-radius: 25px;
+            border: 2px solid #00ffbf00;
+        }
+
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #00ffbfb6;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidenav a:hover {
+            color: #ff6600;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+    </style>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">Main Page</a>
+        <a href="#">Games</a>
+        <a href="#">Videos</a>
+        <br><br><br>
+        <a class="button" href="#">Steam</a>
+        <a class="button" href="#">Instagram</a>
+        <a class="button" href="#">Youtube</a>
+        <a class="button" href="#">Facebook</a>
+    </div>
+
+    <span id="Menu" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+
+    <div id="content"></div>
+
+    <div class="grid-container">
+        <div class="header"></div>
+        <div class="main"></div>
+        <div class="footer"></div>
+    </div>
+
+    <script>
+
+        function openNav() {
+            document.getElementById("mySidenav").style.borderRadius = "25px";
+            document.getElementById("mySidenav").style.border = "2px solid #00ffbfb6";
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("Menu").style.opacity = "0";
+            document.getElementById("Menu").style.transition = "0.5s";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.borderRadius = "25px";
+            document.getElementById("mySidenav").style.border = "2px solid #00ffbf00";
+            document.getElementById("mySidenav").style.width = "0px";
+            document.getElementById("Menu").style.opacity = "1";
+            document.getElementById("Menu").style.transition = "0.5s";
+        }
+
+    </script>
+
+</body>
+
+</html>

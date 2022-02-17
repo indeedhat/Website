@@ -1,0 +1,74 @@
+<html>
+
+<head>
+    <title>Card</title>
+
+    <style>
+        body {
+            margin: 0 auto;
+        }
+
+        .container {
+            top: 20%;
+            left: 25%;
+            perspective: 1000px;
+            perspective-origin: 65%;
+            position: absolute;
+            transform-style: preserve-3d;
+            height: 520px;
+            width: 435px;
+        }
+
+        .front {
+            transform: translateZ(100px) translateY(0px) translateX(0px) rotateY(0deg);
+            background-image: url('card.png');
+            height: 489px;
+            width: 370px;
+            cursor: pointer;
+            transform-origin: left;
+            transition: 2s;
+        }
+
+        .back {
+            transform: translateZ(99px) translateX(0px) translateY(-505px);
+            background-color: white;
+            height: 489px;
+            width: 370px;
+        }
+
+        .opened {
+            transform: translateZ(100px) translateY(0px) translateX(0px) rotateY(-120deg);
+            transition: 2s;
+        }
+    </style>
+
+</head>
+
+<body style="background-color: #ffcede;overflow-x: hidden;overflow-y: hidden;">
+
+    <p style="color: #7400ff;font-size: 18px;font-style: italic;padding: 10px;">Click on the cover to open/close the
+        card</p>
+
+    <div class="container">
+        <figure class="front" id="cover"></figure>
+        <figure class="back">
+            <p style="padding: 20px 0px 0px 20px;">To Aleta</p>
+            <br><br>
+            <p style="text-align: center;">Take it easy</p>
+            <p style="text-align: center;">Best wishes</p>
+            <p style="text-align: center;">From</p>
+            <p style="text-align: center;">Dominic</p>
+        </figure>
+    </div>
+
+    <script>
+
+        document.getElementById("cover").addEventListener("click", function () {
+            document.getElementById("cover").classList.toggle("opened")
+        });
+
+    </script>
+
+</body>
+
+</html>

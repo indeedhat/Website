@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <script>
+            function showNotification () {
+                const notification = new Notification("Notification from Dom", {
+                    body: "Hey, you've got a file from Dom",
+                    icon: "https://yt3.ggpht.com/ytc/AAUvwnh420RCY74fql-I1lgj9lvXe8qxGCW21dIH_97Z=s88-c-k-c0x00ffffff-no-rj"
+                });
+
+                notification.onclick = (e) => {
+                window.location.href = "https://www.aletaloves.me/";
+                };
+            }
+
+            console.log(Notification.permission);
+
+            if (Notification.permission === "granted") {
+                showNotification();
+            } else if (Notification.permission !== "denied") {
+                Notification.requestPermission().then(permission => {
+                    if (permission === "granted") {
+                        showNotification();
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>

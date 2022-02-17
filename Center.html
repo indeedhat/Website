@@ -1,0 +1,95 @@
+<html>
+
+    <head>
+        
+    </head>
+
+    <style>
+
+        * {
+          box-sizing: border-box;
+        }
+
+        body,
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        ul {
+          font-family: "Poppins-Regular";
+          color: #333;
+          font-size: 13px;
+          margin: 0;
+        }
+
+        .wrapper {
+          min-height: 100vh;
+          background-size: cover;
+          background-repeat: no-repeat;
+          display: flex;
+          align-items: center;
+        }
+
+        .inner {
+          padding: 20px;
+          background: rgba(255, 255, 255, 0.26);
+          margin: 0 auto;
+        }
+
+        .inner .image-holder {
+          width: 50%;
+        }
+
+        .inner form {
+          width: 360px;
+          margin: 0 auto;
+        }
+
+        .inner h3 {
+          text-transform: uppercase;
+          font-size: 25px;
+          font-family: "Poppins-SemiBold";
+          text-align: center;
+          margin-bottom: 28px;
+        }
+
+        @media (max-width: 1199px) {
+          .wrapper {
+            background-position: right center;
+          }
+        }
+
+        @media (max-width: 991px) {
+          .inner form {
+            padding-top: 10px;
+          }
+        }
+
+        @media (max-width: 767px) {
+          .inner {
+            display: block;
+          }
+          .inner .image-holder {
+            width: 100%;
+          }
+          .inner form {
+            padding: 40px 0 30px;
+          }
+        }
+    
+    </style>
+
+    <body>
+        
+        <div class="wrapper" style="background-color: #202020;">
+            <div class="inner" style="border-radius: 20px;border: 2px solid #00000000;">
+              <iframe id="curioframe" style="border-radius: 20px;border: 2px solid #fa8500;height: 650px;width: 900px;" src="https://www.thecynicslantern.net/stack/?nolink=1"></iframe>
+            </div>
+        </div>
+
+    </body>
+
+</html>

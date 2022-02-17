@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Light</title>
+    </head>
+
+    <body>
+
+        <div class="wrapper" style="background-color: #202020;">
+            <div class="inner">
+                <center>
+                    <img id="myImage" src="Off.png" style="width:100px">
+                </center>
+                <center>
+                    <button onclick="document.getElementById('myImage').src='On.png'">Turn on the light</button>
+                    
+                    <button onclick="document.getElementById('myImage').src='Off.png'">Turn off the light</button>
+                </center>
+            </div>
+        </div>
+
+        <style>
+            body {
+              margin: 0; 
+            }
+
+            img {
+              max-width: 100%;
+              border-radius: 10px;
+              border: 3px solid #00ff9fbd;
+            }
+            
+            .wrapper {
+              min-height: 100vh;
+              display: flex;
+              align-items: center;
+            }
+            
+            .inner {
+              padding: 20px;
+              width: 500px;
+              margin: 0 auto; 
+            }
+            button {
+              border: none;
+              width: 164px;
+              height: 51px;
+              align-items: center;
+              margin-top: 65px !important;
+              cursor: pointer;
+              font-size: 15px;
+              color: #fff;
+              background: #333;
+              margin-left: 35px;
+              margin-right: 35px; 
+              border-radius: 10px;
+              border: 3px solid #00ff9fbd;
+            }
+
+        </style>
+
+    </body>
+
+</html>

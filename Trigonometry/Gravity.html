@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<head>
+
+  <script type="text/javascript" src="vector.js"></script>
+	<script type="text/javascript" src="particle.js"></script>
+  <title></title>
+  <style>
+    html,
+    body {
+      margin: 0px;
+    }
+
+    #canvas {
+      display: block;
+      background-color: black;
+    }
+  </style>
+
+  <script>
+    debugger;
+    window.onload = function() {
+      var canvas = document.getElementById("canvas"),
+        context = canvas.getContext("2d"),
+        width = canvas.width = window.innerWidth,
+        height = canvas.height = window.innerHeight,
+        sun = particle.create(width / 2, height / 2, 0, 0),
+        marcury = particle.create(width / 2 + 160, height / 2, 10, -Math.PI / 2),
+        venus = particle.create(width / 2 + 180, height / 2, 10, -Math.PI / 2),
+        earth = particle.create(width / 2 + 200, height / 2, 10, -Math.PI / 2),
+        mars = particle.create(width / 2 + 220, height / 2, 10, -Math.PI / 2),
+        jupiter = particle.create(width / 2 + 240, height / 2, 10, -Math.PI / 2);
+
+      sun.mass = 20000;
+
+      update();
+
+      function update() {
+        context.clearRect(0, 0, width, height);
+
+        marcury.gravitateTo(sun);
+        venus.gravitateTo(sun);
+        earth.gravitateTo(sun);
+        mars.gravitateTo(sun);
+        jupiter.gravitateTo(sun);
+
+        marcury.update();
+        venus.update();
+        earth.update();
+        mars.update();
+        jupiter.update();
+
+        context.beginPath();
+        context.fillStyle = "yellow";
+        context.arc(sun.position.getX(), sun.position.getY(), 60, 0, Math.PI * 2, false);
+        context.fill();
+
+        context.beginPath();
+        context.fillStyle = "gray";
+        context.arc(marcury.position.getX(), marcury.position.getY(), 4, 0, Math.PI * 2, false);
+        context.fill();
+
+        context.beginPath();
+        context.fillStyle = "brown";
+        context.arc(venus.position.getX(), venus.position.getY(), 5, 0, Math.PI * 2, false);
+        context.fill();
+
+        context.beginPath();
+        context.fillStyle = "blue";
+        context.arc(earth.position.getX(), earth.position.getY(), 5, 0, Math.PI * 2, false);
+        context.fill();
+
+        context.beginPath();
+        context.fillStyle = "red";
+        context.arc(mars.position.getX(), mars.position.getY(), 4, 0, Math.PI * 2, false);
+        context.fill();
+
+        context.beginPath();
+        context.fillStyle = "pink";
+        context.arc(jupiter.position.getX(), jupiter.position.getY(), 10, 0, Math.PI * 2, false);
+        context.fill();
+
+        requestAnimationFrame(update);
+      }
+    };
+
+  </script>
+
+</head>
+
+<body>
+
+  <canvas id="canvas"></canvas>
+
+</body>
+
+</html>

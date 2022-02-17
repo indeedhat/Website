@@ -1,0 +1,505 @@
+<html>
+
+<head>
+  <style>
+    th,
+    td {
+      border-radius: 5px;
+      border: 1px solid #00ff9d;
+    }
+
+    body {
+      background-color: #202020;
+      padding: 5px;
+      color: #00ff9d;
+      font-family: "Lato", sans-serif;
+    }
+
+    a {
+      width: 100px;
+      height: 100px;
+      position: relative;
+      animation: rainbow linear 4s infinite;
+    }
+
+    @keyframes rainbow {
+      0% {
+        color: red;
+      }
+
+      10% {
+        color: orange;
+      }
+
+      15% {
+        color: lawngreen;
+      }
+
+      25% {
+        color: green;
+      }
+
+      50% {
+        color: blue;
+      }
+
+      75% {
+        color: pink;
+      }
+
+      90% {
+        color: purple;
+      }
+
+      100% {
+        color: red;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div>
+    <h3>Media (<span id="oneMedia" style="cursor: pointer; color: #ffffffa3;" onclick="openMedia()">open</span>
+      <span id="twoMedia" style="cursor: pointer;color: #ffffffa3;" onclick="closeMedia() ">close</span>)
+    </h3>
+  </div>
+  <div id="outermedia" style="height: 0px; visibility: hidden;">
+    <table style="position: relative;left: 40px;">
+
+      <tbody id="innermedia" style="opacity: 0;">
+        <tr>
+          <th>Name</th>
+          <th>Date</th>
+          <th>Size</th>
+          <th>Update</th>
+        </tr>
+        <td><a href="https://drive.google.com/file/d/11PemaHvJfQ7zYzLH6M44ZG9Q6HzhjgEm/preview"
+            style="color: #9400FF;">Social Media</a></td>
+        <td>17/01/2021</td>
+        <td>109 Kb</td>
+        <td>Digital media</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+
+    var onem = document.getElementById("oneMedia");
+    var tom = document.getElementById("twoMedia");
+    var innerm = document.getElementById("innermedia");
+    var outerm = document.getElementById("outermedia");
+    tom.style.display = 'none';
+
+    function openMedia() {
+      innerm.style.opacity = "1";
+      innerm.style.transition = "1s";
+      outerm.style.height = "59px";
+      outerm.style.transition = "1s";
+      outerm.style.visibility = "visible";
+      outerm.style.pointerEvents = "auto";
+
+      onem.style.display = 'none';
+      tom.style.display = '';
+    }
+
+    function closeMedia() {
+      innerm.style.opacity = "0";
+      innerm.style.transition = "1s";
+      outerm.style.height = "0px";
+      outerm.style.transition = "2s";
+      outerm.style.visibility = "hidden";
+      outerm.style.pointerEvents = "none";
+
+      onem.style.display = '';
+      tom.style.display = 'none';
+    }
+
+  </script>
+
+  <br>
+
+  <div>
+    <h3>Projects (<span id="oneProjects" style="cursor: pointer; color: #ffffffa3;"
+        onclick="openProjects()">open</span><span id="twoProjects" style="cursor: pointer;color: #ffffffa3;"
+        onclick="closeProjects() ">close</span>)</h3>
+  </div>
+
+  <div id="outerprojects" style="height: 0px; visibility: hidden;width: 940px;">
+    <table style="position: relative;left: 40px;">
+
+      <tbody id="innerprojects" style="opacity: 0;">
+        <tr>
+          <th>Name</th>
+          <th>Date</th>
+          <th>Size</th>
+        </tr>
+        <tr>
+          <td><a href="sideNav.html" style="color: #9400FF;">Side navigation</a></td>
+          <td>02/08/2020</td>
+          <td>15.6 Kb</td>
+        </tr>
+        <tr>
+          <td><a href="Center.html" style="color: #9400FF;">Center</a></td>
+          <td>17/01/2021</td>
+          <td>2 Kb</td>
+        </tr>
+        <tr>
+          <td><a href="Responsive.html" style="color: #9400FF;">Responsive Page</a></td>
+          <td>17/01/2021</td>
+          <td>4 Kb</td>
+        </tr>
+        <tr>
+          <td><a href="../Lightswitch/lightswitch.html" style="color: #9400FF;">Light Switch</a></td>
+          <td>17/01/2021</td>
+          <td>62 Kb</td>
+        </tr>
+        <tr>
+          <td><a href="button.html" style="color: #9400FF;">Twitter button</a></td>
+          <td>17/01/2021</td>
+          <td>2 Kb</td>
+        </tr>
+        <tr>
+          <td><a href="/3D-Objects/Cube/3D-Cube(up).html" style="color: #9400FF;">3D Cube (one way direction with
+              controls)</a></td>
+          <td>06/03/2021</td>
+          <td>3.3 Kb</td>
+        </tr>
+        <tr>
+          <td><a href="/3D-Objects/Cube/3D-Cube(free).html" style="color: #9400FF;">3D Cube (360 + cam free)</a></td>
+          <td>11/03/2021</td>
+          <td>4.3 Kb</td>
+        </tr>
+        <tr>
+          <td><a href="/3D-Objects/Cube/3D-Cube(icon).html" style="color: #9400FF;">3D Cube (icon)</a></td>
+          <td>11/03/2021</td>
+          <td>1.2 Kb</td>
+        </tr>
+        <tr>
+          <td><a href="/3D-Objects/Cube/3D-Websites(all).html" style="color: #9400FF;">3D Cube (Websites)</a></td>
+          <td>11/03/2021</td>
+          <td>2.3 Kb</td>
+        </tr>
+        <tr>
+          <td><a href="/3D-Objects/Car/3D-Car(all).html" style="color: #9400FF;">3D Car</a></td>
+          <td>06/03/2021</td>
+          <td>4.2 Kb</td>
+        </tr>
+        <tr>
+          <td><a href="/3D-Objects/Car/3D-Car(free).html" style="color: #9400FF;">3D Car (360 + cam free)</a></td>
+          <td>11/03/2021</td>
+          <td>6.5 Kb</td>
+        </tr>
+        <tr>
+          <td><a href="/3D-Objects/Car/3D-Car(icon).html" style="color: #9400FF;">3D Car (icon)</a></td>
+          <td>11/03/2021</td>
+          <td>3.6 Kb</td>
+        </tr>
+        <tr>
+          <td><a href="/3D-Objects/Triangle/3D-Triangle(all).html" style="color: #9400FF;">3D Triangle</a></td>
+          <td>06/03/2021</td>
+          <td>590 B</td>
+        </tr>
+        <tr>
+          <td><a href="/TempleOS/" style="color: #9400FF;">TempleOS Platform (stable)</a></td>
+          <td>12/03/2021</td>
+          <td>4.3 Kb</td>
+        </tr>
+        <tr>
+          <td><a href="/DomOS/" style="color: #9400FF;">DomOS Platform</a></td>
+          <td>12/03/2021</td>
+          <td>3.1 Kb</td>
+        </tr>
+        <tr>
+          <td><a href="/dynamic-image-v2.html" style="color: #9400FF;">Adding images</a></td>
+          <td>12/03/2021</td>
+          <td>2.6 Kb</td>
+        </tr>
+        <tr>
+          <td><a href="/dynamic-image.html" style="color: #9400FF;">Adding image (replace)</a></td>
+          <td>12/03/2021</td>
+          <td>1.9 Kb</td>
+        </tr>
+        <tr>
+          <td><a href="/close-image.html" style="color: #9400FF;">Add + remove image</a></td>
+          <td>07/04/2021</td>
+          <td>2.5 Kb</td>
+        </tr>
+        <tr>
+          <td><a href="/close-image-v2.html" style="color: #9400FF;">Add + remove image v2</a></td>
+          <td>07/04/2021</td>
+          <td>2.8 Kb</td>
+        </tr>
+        <tr>
+          <td><a href="/Uploader/List.php" style="color: #9400FF;">List images/videos</a></td>
+          <td>07/04/2021</td>
+          <td>4.4 Kb</td>
+        </tr>
+        <tr>
+          <td><a href="/Uploader/Add.php" style="color: #9400FF;">Add image/video</a></td>
+          <td>07/04/2021</td>
+          <td>4.4 Kb</td>
+        </tr>
+        <tr>
+          <td><a href="/Uploader/Replace.php" style="color: #9400FF;">Replace image/video</a></td>
+          <td>07/04/2021</td>
+          <td>4.5 Kb</td>
+        </tr>
+        <tr>
+          <td><a href="video.php?v=2021-04-15 20-36-09.mp4" style="color: #9400FF;">Display a video</a></td>
+          <td>20/04/2021</td>
+          <td>884 B</td>
+        </tr>
+        <tr>
+          <td><a href="img.php?v=1535256558387.gif" style="color: #9400FF;">Display an image</a></td>
+          <td>20/04/2021</td>
+          <td>876 B</td>
+        </tr>
+        <tr>
+          <td><a href="404-test.html" style="color: #9400FF;">404 error test</a></td>
+          <td>5/01/2022</td>
+          <td>2 kB</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+
+    var onep = document.getElementById("oneProjects");
+    var tpr = document.getElementById("twoProjects");
+    var innerp = document.getElementById("innerprojects");
+    var outerp = document.getElementById("outerprojects");
+    tpr.style.display = 'none';
+
+    function openProjects() {
+      innerp.style.opacity = "1";
+      innerp.style.transition = "1s";
+      outerp.style.height = "730px";
+      outerp.style.transition = "1s";
+      outerp.style.visibility = "visible";
+      outerp.style.pointerEvents = "auto";
+
+      onep.style.display = 'none';
+      tpr.style.display = '';
+    }
+
+    function closeProjects() {
+      innerp.style.opacity = "0";
+      innerp.style.transition = "1s";
+      outerp.style.height = "0px";
+      outerp.style.transition = "2s";
+      outerp.style.visibility = "hidden";
+      outerp.style.pointerEvents = "none";
+
+      onep.style.display = '';
+      tpr.style.display = 'none';
+    }
+
+  </script>
+
+  <br>
+
+  <div>
+    <h3>Trigonometry (<span id="oneTrig" style="cursor: pointer; color: #ffffffa3;" onclick="openTrig()">open</span><span
+        id="twoTrig" style="cursor: pointer;color: #ffffffa3;" onclick="closeTrig() ">close</span>)</h3>
+  </div>
+  <div id="outertrig" style="height: 0px; visibility: hidden;">
+    <table style="position: relative;left: 40px;">
+
+      <tbody id="innertrig" style="opacity: 0;">
+        <tr>
+          <th>Name</th>
+          <th>Date</th>
+          <th>Size</th>
+        </tr>
+        <tr>
+          <td><a href="../Trigonometry/Collision.html" style="color: #9400FF;">Two object collisions</a></td>
+          <td>20/01/2021</td>
+          <td>1 Mb</td>
+        </tr>
+        <tr>
+          <td><a href="../Trigonometry/Coordinate-Rotate-3D-Cube.html" style="color: #9400FF;">3D Cube</a></td>
+          <td>30/01/2021</td>
+          <td>Unknown</td>
+        </tr>
+        <tr>
+          <td><a href="../Trigonometry/Gravity-Bouncy-Collision.html" style="color: #9400FF;">Bouncy Ball (Gravity / Collision)</a></td>
+          <td>2/02/2021</td>
+          <td>24 Mb</td>
+        </tr>
+        <tr>
+          <td><a href="../Trigonometry/Gravity.html" style="color: #9400FF;">Space Gravity</a></td>
+          <td>2/02/2021</td>
+          <td>34 Mb</td>
+        </tr>
+        <tr>
+          <td><a href="../Trigonometry/Sine-Wave.html" style="color: #9400FF;">Sine Wave</a></td>
+          <td>2/02/2021</td>
+          <td>24 Mb</td>
+        </tr>
+        <tr>
+          <td><a href="../Trigonometry/String.html" style="color: #9400FF;">String (Mouse movement)</a></td>
+          <td>17/03/2021</td>
+          <td>24 Mb</td>
+        </tr>
+        <tr>
+          <td><a href="../Trigonometry/Strings-v2.html" style="color: #9400FF;">String (Mouse movement / Gravity)</a></td>
+          <td>17/03/2021</td>
+          <td>8.7 Mb</td>
+        </tr>
+        <tr>
+          <td><a href="../Trigonometry/Strings-v3.html" style="color: #9400FF;">3 Strings (Points / Collision)</a></td>
+          <td>17/03/2021</td>
+          <td>8.7 Mb</td>
+        </tr>
+        <tr>
+          <td><a href="../Trigonometry/Verlet-Integration.html" style="color: #9400FF;">2D box (Points / Gravity)</a></td>
+          <td>17/03/2021</td>
+          <td>8.7 Mb</td>
+        </tr>
+        <tr>
+          <td><a href="../Trigonometry/Rocket.html" style="color: #9400FF;">Rocket Game</a></td>
+          <td>17/03/2021</td>
+          <td>8.7 Mb</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+
+    var onet = document.getElementById("oneTrig");
+    var tot = document.getElementById("twoTrig");
+    var innert = document.getElementById("innertrig");
+    var outert = document.getElementById("outertrig");
+    tot.style.display = 'none';
+
+    function openTrig() {
+      innert.style.opacity = "1";
+      innert.style.transition = "1s";
+      outert.style.height = "345px";
+      outert.style.transition = "1s";
+      outert.style.visibility = "visible";
+      outert.style.pointerEvents = "auto";
+
+      onet.style.display = 'none';
+      tot.style.display = '';
+    }
+
+    function closeTrig() {
+      innert.style.opacity = "0";
+      innert.style.transition = "1s";
+      outert.style.height = "0px";
+      outert.style.transition = "2s";
+      outert.style.visibility = "hidden";
+      outert.style.pointerEvents = "none";
+
+      onet.style.display = '';
+      tot.style.display = 'none';
+    }
+
+  </script>
+
+  <br>
+
+  <div>
+    <h3>Games (<span id="oneGames" style="cursor: pointer; color: #ffffffa3;" onclick="openGames()">open</span><span
+        id="twoGames" style="cursor: pointer;color: #ffffffa3;" onclick="closeGames() ">close</span>)</h3>
+  </div>
+  <div id="outergames" style="height: 0px; visibility: hidden;">
+    <table style="position: relative;left: 40px;">
+
+      <tbody id="innergames" style="opacity: 0;">
+        <tr>
+          <th>Name</th>
+          <th>Date</th>
+          <th>Size</th>
+          <th>Update</th>
+        </tr>
+        <tr>
+          <td><a href="../Custom%20Games/Maze/" style="color: #9400FF;">Maze Game</a></td>
+          <td>20/01/2021</td>
+          <td>1 Mb</td>
+          <td>2D Maze game using polygons (HTML) (Stable)</td>
+        </tr>
+        <tr>
+          <td><a href="../Custom%20Games/Maze-v2/" style="color: #9400FF;">Maze Game v2</a></td>
+          <td>30/01/2021</td>
+          <td>Unknown</td>
+          <td>2D Maze game using polygons (HTML) (Not ready)</td>
+        </tr>
+        <tr>
+          <td><a href="../Custom%20Games/Cube-Runner/" style="color: #9400FF;">Cube Runner (WebGL)</a></td>
+          <td>2/02/2021</td>
+          <td>24 Mb</td>
+          <td>Unity game (Cube Runner)</td>
+        </tr>
+        <tr>
+          <td><a href="../Custom%20Games/MacOS.zip" style="color: #9400FF;">Cube Runner (MacOS)</a></td>
+          <td>2/02/2021</td>
+          <td>34 Mb</td>
+          <td>Unity game (Cube Runner)</td>
+        </tr>
+        <tr>
+          <td><a href="../Custom%20Games/WindowsOS.zip" style="color: #9400FF;">Cube Runner (Windows)</a></td>
+          <td>2/02/2021</td>
+          <td>24 Mb</td>
+          <td>Unity game (Cube Runner)</td>
+        </tr>
+        <tr>
+          <td><a href="../Custom%20Games/Cube-Runner(Windows-x84_64).zip" style="color: #9400FF;">Cube Runner v1.0.2
+              (Windows-x84_64)</a></td>
+          <td>17/03/2021</td>
+          <td>24 Mb</td>
+          <td>Unity game (Cube Runner v1.0.2)</td>
+        </tr>
+        <tr>
+          <td><a href="../Custom%20Games/Cube-Runner-v3/" style="color: #9400FF;">Cube Runner v1.0.2 (WebGL)</a></td>
+          <td>17/03/2021</td>
+          <td>8.7 Mb</td>
+          <td>Unity game (Cube Runner v1.0.2)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+
+    var oneg = document.getElementById("oneGames");
+    var tog = document.getElementById("twoGames");
+    var innerg = document.getElementById("innergames");
+    var outerg = document.getElementById("outergames");
+    tog.style.display = 'none';
+
+    function openGames() {
+      innerg.style.opacity = "1";
+      innerg.style.transition = "1s";
+      outerg.style.height = "59px";
+      outerg.style.transition = "1s";
+      outerg.style.visibility = "visible";
+      outerg.style.pointerEvents = "auto";
+
+      oneg.style.display = 'none';
+      tog.style.display = '';
+    }
+
+    function closeGames() {
+      innerg.style.opacity = "0";
+      innerg.style.transition = "1s";
+      outerg.style.height = "0px";
+      outerg.style.transition = "2s";
+      outerg.style.visibility = "hidden";
+      outerg.style.pointerEvents = "none";
+
+      oneg.style.display = '';
+      tog.style.display = 'none';
+    }
+
+  </script>
+
+</body>
+
+</html>

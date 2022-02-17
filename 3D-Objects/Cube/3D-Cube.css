@@ -1,0 +1,63 @@
+body {
+  margin:0 auto;
+}
+
+p, h1 {
+  color: #fff;
+}
+
+.Controls {
+  width: 216px;
+  margin-top: 25px;
+  margin-left: -10px;
+}
+
+.cube-container, .cube-container-free {
+  height: 250px;
+  top: 30%;
+  left: 30%;
+  perspective: 1000px;
+  perspective-origin: 65%;
+  position: absolute;
+  width: 280px;
+}
+.cube {  
+  transform-style: preserve-3d;
+  animation: spin 15s linear infinite;
+  height: 93%;
+  width: 97%;
+}
+
+.cube-free {
+  height: 93%;
+  width: 97%;
+  transform-style: preserve-3d;
+  transition: transform 0.2s;
+}
+.side {
+  box-shadow: inset 0 0 75px rgba(119, 0, 255, 0.658);
+  border: 1px solid #00ff88;
+  background-color: #2020203a;
+  height: 200px;
+  position: absolute;
+  width: 200px;
+}
+
+.front {
+  transform: translateZ(100px);
+}
+.back {
+  transform: rotateX(180deg) translateZ(100px);
+}
+.left {
+  transform: rotateY(-90deg) translateZ(100px);
+}
+.right {
+  transform: rotateY(90deg) translateZ(100px);
+}
+.top {
+  transform: rotateX(90deg) translateZ(100px);
+}
+.bottom {
+  transform: rotateX(-90deg) translateZ(100px);
+}

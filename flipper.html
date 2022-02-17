@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        body {
+          background: #000;
+          color: #fff;
+        }
+
+        .flipped {
+          transform: rotate(180deg)
+        }
+        </style>
+    </head>
+
+    <body>
+
+        <button id="😁">click dis</button>
+        <p id="🧑‍💻">Hello, I am a paragraph.</p>
+
+        <script>
+            document.getElementById("😁").addEventListener("click", function() {
+              document.getElementById("🧑‍💻").classList.toggle("flipped")
+            });
+        </script>
+
+    </body>
+</html>

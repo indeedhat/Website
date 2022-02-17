@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<head>
+
+    <link rel="shortcut icon" href="favicon.ico" />
+
+    <script type="text/javascript">
+
+        var speed = setInterval(Up, 100);
+        var totalSeconds = 0;
+
+        function Up() {
+          ++totalSeconds;
+          var seconds = totalSeconds - (null);
+          document.getElementById("adding").innerHTML = `translateZ(` + seconds + `px)`;
+        }
+
+    </script>
+</head>
+
+<body>
+    <p id="adding"></p>
+</body>
+
+</html>

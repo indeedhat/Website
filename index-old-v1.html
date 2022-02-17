@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <style>
+        body {
+            background: #5f5b62;
+            text-align: center;
+        }
+
+        iframe {
+            border: 2px solid white;
+            border-radius: 10px;
+            will-change: transform, filter;
+            filter: saturate(20%);
+            box-shadow: 4px 4px 8px #000000b3;
+        }
+
+        iframe:hover {
+            filter: none;
+            box-shadow: 23px 23px 24px #000000b3;
+        }
+
+        .search {
+            transition: 0.5s all;
+            width: 1290px;
+            height: 900px;
+            transform: scale(0.35);
+            position: fixed;
+            top: -20%;
+            left: -10%;
+        }
+
+        .search:hover {
+            transition: 0.5s all;
+            transform: scale(1);
+            position: fixed;
+            width: 1700px;
+            height: 920px;
+            top: 1%;
+            left: 6%;
+        }
+
+        .games {
+            transition: 0.5s all;
+            width: 1290px;
+            height: 900px;
+            transform: scale(0.35);
+            position: fixed;
+            top: -20%;
+            left: 15%;
+        }
+
+        .games:hover {
+            transition: 0.5s all;
+            transform: scale(1);
+            position: fixed;
+            width: 1700px;
+            height: 920px;
+            top: 1%;
+            left: 6%;
+        }
+
+        .list {
+            transition: 0.5s all;
+            width: 1290px;
+            height: 900px;
+            transform: scale(0.35);
+            position: fixed;
+            top: -20%;
+            left: 40%;
+        }
+
+        .list:hover {
+            transition: 0.5s all;
+            transform: scale(1);
+            position: fixed;
+            width: 1700px;
+            height: 920px;
+            top: 1%;
+            left: 6%;
+        }
+
+        .projects {
+            transition: 0.5s all;
+            width: 1290px;
+            height: 900px;
+            transform: scale(0.35);
+            position: fixed;
+            top: 25%;
+            left: -10%;
+        }
+
+        .projects:hover {
+            transition: 0.5s all;
+            transform: scale(1);
+            position: fixed;
+            width: 1700px;
+            height: 920px;
+            top: 1%;
+            left: 6%;
+            ;
+        }
+
+        .maze {
+            transition: 0.5s all;
+            width: 1290px;
+            height: 900px;
+            transform: scale(0.35);
+            position: fixed;
+            top: 25%;
+            left: 15%;
+        }
+
+        .maze:hover {
+            transition: 0.5s all;
+            transform: scale(1);
+            position: fixed;
+            width: 1700px;
+            height: 920px;
+            top: 1%;
+            left: 6%;
+        }
+
+        .stream {
+            transition: 0.5s all;
+            width: 1290px;
+            height: 900px;
+            transform: scale(0.35);
+            position: fixed;
+            top: 25%;
+            left: 40%;
+        }
+
+        .stream:hover {
+            transition: 0.5s all;
+            transform: scale(1);
+            position: fixed;
+            width: 1700px;
+            height: 920px;
+            top: 1%;
+            left: 6%;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div style="background-image: url('https://m.media-amazon.com/images/I/51oSAyOEEzS.jpg');height: 200px;width: 125px;position: fixed;right: 1vh;bottom: 1vh;background-size: contain;">
+        <a href="https://www.amazon.co.uk/dp/B08ZBT27WR/ref=cm_sw_em_r_mt_dp_5898X341S4ZC70E1B4NN" style="width: 125px;position: fixed;height: 200px;right: 1vh;"></a>
+    </div>
+
+    <iframe id="search" class="search" onmouseover="searchHover(this)" onmouseout="searchUnhover(this)"
+        src="search.html"></iframe>
+
+    <script>
+
+        function searchHover() {
+            document.getElementById("games").style.display = "none";
+            document.getElementById("list").style.display = "none";
+            document.getElementById("projects").style.display = "none";
+            document.getElementById("maze").style.display = "none";
+            document.getElementById("stream").style.display = "none";
+        }
+
+        function searchUnhover() {
+            document.getElementById("games").style.display = "block";
+            document.getElementById("list").style.display = "block";
+            document.getElementById("projects").style.display = "block";
+            document.getElementById("maze").style.display = "block";
+            document.getElementById("stream").style.display = "block";
+        }
+
+    </script>
+
+    <iframe id="games" class="games" onmouseover="gamesHover(this)" onmouseout="gamesUnhover(this)"
+        src="TempleOS/index.html"></iframe>
+
+    <script>
+
+        function gamesHover() {
+            document.getElementById("search").style.display = "none";
+            document.getElementById("list").style.display = "none";
+            document.getElementById("projects").style.display = "none";
+            document.getElementById("maze").style.display = "none";
+            document.getElementById("stream").style.display = "none";
+        }
+
+        function gamesUnhover() {
+            document.getElementById("search").style.display = "block";
+            document.getElementById("list").style.display = "block";
+            document.getElementById("projects").style.display = "block";
+            document.getElementById("maze").style.display = "block";
+            document.getElementById("stream").style.display = "block";
+        }
+
+    </script>
+
+    <iframe id="list" class="list" onmouseover="listHover(this)" onmouseout="listUnhover(this)"
+        src="Uploader/List.php"></iframe>
+
+    <script>
+
+        function listHover() {
+            document.getElementById("search").style.display = "none";
+            document.getElementById("games").style.display = "none";
+            document.getElementById("projects").style.display = "none";
+            document.getElementById("maze").style.display = "none";
+            document.getElementById("stream").style.display = "none";
+        }
+
+        function listUnhover() {
+            document.getElementById("search").style.display = "block";
+            document.getElementById("games").style.display = "block";
+            document.getElementById("projects").style.display = "block";
+            document.getElementById("maze").style.display = "block";
+            document.getElementById("stream").style.display = "block";
+        }
+
+    </script>
+
+    <iframe id="projects" class="projects" onmouseover="projectsHover(this)" onmouseout="projectsUnhover(this)"
+        src="Digital Media/signin.html"></iframe>
+
+    <script>
+
+        function projectsHover() {
+            document.getElementById("search").style.display = "none";
+            document.getElementById("games").style.display = "none";
+            document.getElementById("list").style.display = "none";
+            document.getElementById("maze").style.display = "none";
+            document.getElementById("stream").style.display = "none";
+        }
+
+        function projectsUnhover() {
+            document.getElementById("search").style.display = "block";
+            document.getElementById("games").style.display = "block";
+            document.getElementById("list").style.display = "block";
+            document.getElementById("maze").style.display = "block";
+            document.getElementById("stream").style.display = "block";
+        }
+
+    </script>
+
+    <iframe id="maze" class="maze" onmouseover="mazeHover(this)" onmouseout="mazeUnhover(this)"
+        src="Custom Games/Maze/index.html"></iframe>
+
+    <script>
+
+        function mazeHover() {
+            document.getElementById("search").style.display = "none";
+            document.getElementById("games").style.display = "none";
+            document.getElementById("list").style.display = "none";
+            document.getElementById("projects").style.display = "none";
+            document.getElementById("stream").style.display = "none";
+        }
+
+        function mazeUnhover() {
+            document.getElementById("search").style.display = "block";
+            document.getElementById("games").style.display = "block";
+            document.getElementById("list").style.display = "block";
+            document.getElementById("projects").style.display = "block";
+            document.getElementById("stream").style.display = "block";
+        }
+
+    </script>
+
+    <iframe id="stream" class="stream" onmouseover="streamHover(this)" onmouseout="streamUnhover(this)"
+        src="Projects.html"></iframe>
+
+    <script>
+
+        function streamHover() {
+            document.getElementById("search").style.display = "none";
+            document.getElementById("games").style.display = "none";
+            document.getElementById("list").style.display = "none";
+            document.getElementById("maze").style.display = "none";
+            document.getElementById("projects").style.display = "none";
+        }
+
+        function streamUnhover() {
+            document.getElementById("search").style.display = "block";
+            document.getElementById("games").style.display = "block";
+            document.getElementById("list").style.display = "block";
+            document.getElementById("maze").style.display = "block";
+            document.getElementById("projects").style.display = "block";
+        }
+
+    </script>
+
+</body>
+
+</html>

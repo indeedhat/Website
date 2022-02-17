@@ -1,0 +1,150 @@
+<!DOCTYPE html><html>
+
+    <head>
+        
+    </head>
+
+    <style>
+
+        * {
+          box-sizing: border-box;
+        }
+
+        body,
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        ul {
+          font-family: "Poppins-Regular";
+          color: #333;
+          font-size: 13px;
+          margin: 0;
+        }
+
+        .wrapper {
+          min-height: 100vh;
+          background-size: cover;
+          background-repeat: no-repeat;
+          display: flex;
+          align-items: center;
+        }
+
+        .inner {
+          padding: 20px;
+          background: rgba(255, 255, 255, 0.26);
+          margin: 0 auto;
+        }
+
+        .inner .image-holder {
+          width: 50%;
+        }
+
+        .inner form {
+          width: 360px;
+          margin: 0 auto;
+        }
+
+        .inner h3 {
+          text-transform: uppercase;
+          font-size: 25px;
+          font-family: "Poppins-SemiBold";
+          text-align: center;
+          margin-bottom: 28px;
+        }
+
+        @media (max-width: 1199px) {
+          .wrapper {
+            background-position: right center;
+          }
+        }
+
+        @media (max-width: 991px) {
+          .inner form {
+            padding-top: 10px;
+          }
+        }
+
+        @media (max-width: 767px) {
+          .inner {
+            display: block;
+          }
+          .inner .image-holder {
+            width: 100%;
+          }
+          .inner form {
+            padding: 40px 0 30px;
+          }
+        }
+
+        img {
+            max-height: 500px;
+        }
+
+        #xButton {
+          float: right;
+          display: none;
+        }
+
+        .showBanner {
+          width: 50%;
+        }
+    
+    </style>
+
+    <body>
+        
+      <div class="wrapper" style="background-color: #202020;">
+        <div class="inner" id="inner" style="border-radius: 20px;border: 2px solid #00000000;text-align: center;">
+          <form>
+            <input type="text" id="txt" placeholder="image url">
+            <input id="addImageButton" type="button" value="add" onclick="getImg();" />
+          </form>
+          <br><br>
+          <button id="xButton"> x </button>
+          <img id="images"></img>
+        </div>
+      </div>
+
+      <script>
+        /* we'll be creating and appending a few elements so let's simplify that with a
+        function. expected parameters (tag and parent) are a string (eg "div",
+        "span" etc) and a reference to the element you want to append the new element to */
+        function createAndAppend(tag, parent){
+          const el = document.createElement(tag);
+          parent.appendChild(el);
+          return el;
+        }
+
+        // now a function to actually add the image, complete with X button
+        function addImage(url, parent){
+          const container = createAndAppend("div", parent);
+          const img = createAndAppend("img", container);
+          const deleteButton = createAndAppend("button", container);
+        
+          img.src = url; // set src to whatever url got passed in this call to addImage
+        
+          deleteButton.addEventListener("click", () => {
+            parent.removeElement(container);
+          });
+        }
+
+        // get references to the container and the input box, to use in the event handler
+        const imageContainer = document.getElementById("imageContainer");
+        const inputBox = document.getElementById("urlInput");
+
+
+        // the event handler:
+        document.getElementById("addImageButton").addEventListener("click", () => {
+          // call the 'addImage' function, passing in the input url and the container element
+          addImage(inputBox, imageContainer);
+        });
+      
+    </script>
+
+    </body>
+
+</html>

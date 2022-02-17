@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    #text {
+      position: absolute;
+      z-index: 9;
+      border: 15px solid #fff;
+      border-style: double;
+    }
+
+    #objects {
+      position: absolute;
+      z-index: 9;
+      border: 15px solid #fff;
+      border-style: double;
+    }
+
+    body {
+      overflow-y: hidden;
+      overflow-x: hidden;
+    }
+
+    #locationheader {
+      cursor: move;
+      z-index: 10;
+      color: #0004ff;
+      font-weight: bold;
+      width: 90px;
+      text-align: center;
+    }
+
+    #titleheader {
+      cursor: move;
+      z-index: 10;
+      color: #0004ff;
+      font-weight: bold;
+      width: 160px;
+      text-align: center;
+    }
+
+    body {
+      font-family: "Lato", sans-serif;
+    }
+  </style>
+</head>
+
+<body
+  style="background: #5ff url('https://ia600600.us.archive.org/31/items/TerryADavis_TempleOS_Archive/images/TempleOS/TempleOS%20sword%20and%20scales%20%28new%20-%20transparent%29.png') no-repeat fixed center;
+  background-size: 50%;">
+
+  <p id="one" style="font-size: 15px; cursor: pointer; color: #000000;width: max-content;" onclick="openCar()">Car</p>
+  <p id="two" style="font-size: 15px; cursor: pointer;color: #000000;width: max-content;" onclick="closeCar()">Close Car</p>
+  <br>
+  <p>Cube (Dev note: working on it.)</p>
+  <br>
+  <p>Triangle (Dev note: working on it.)</p>
+
+  <div id="Car" style="opacity: 0; visibility: visible; pointer-events: none; display: block;">
+
+    <div style="width: 845px; height: 705px; top: 113px; left: 450px;cursor: grab;" id="objects">
+      <iframe id="iframe" style="width: 845px; height: 705px;border: 0px solid #fff;" src="3D-Car(all).html"></iframe>
+
+      <!--Left-->
+      <div style="float: left;margin-top: -740px;" id="titleheader">
+        <p id="Title" style="z-index: 10;color: #0004ff;background-color: white;font-size: 12px;margin-top: 16px;">3D
+          Objects</p>
+      </div>
+
+      <!--Right-->
+      <div style="float: right;margin-top: -740px;width: 190px;" id="locationheader">
+        <p id="TitleLocation" style="
+          z-index: 10;
+          color: rgb(0, 4, 255);
+          background-color: white;
+          font-size: 12px;
+          margin-top: 16px;">~/TempleOS/3D-Objects/
+        </p>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+
+    var o = document.getElementById("one");
+    var to = document.getElementById("two");
+    to.style.display = 'none';
+
+    function openCar() {
+      document.getElementById("Car").style.visibility = "visible";
+      document.getElementById("Car").style.opacity = "1";
+      document.getElementById("Car").style.pointerEvents = "auto";
+
+      o.style.display = 'none';
+      to.style.display = '';
+    }
+
+    function closeCar() {
+      document.getElementById("Car").style.visibility = "hidden";
+      document.getElementById("Car").style.opacity = "0";
+      document.getElementById("Car").style.pointerEvents = "none";
+
+      o.style.display = '';
+      to.style.display = 'none';
+    }
+  </script>
+
+  <script>
+
+    //Make the DIV element draggagle:
+    dragElement(document.getElementById("objects"));
+
+    function dragElement(elmnt) {
+      var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+      if (document.getElementById(elmnt.id + "header")) {
+        /* if present, the header is where you move the DIV from:*/
+        document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+      } else {
+        /* otherwise, move the DIV from anywhere inside the DIV:*/
+        elmnt.onmousedown = dragMouseDown;
+      }
+
+      function dragMouseDown(e) {
+        // change the paragraph (<p>) to I'm being dragged.
+        document.getElementById("Title").innerHTML = "I'm being dragged!!!";
+        document.getElementById("Title").style.marginTop = "725px";
+        // change the height from 740px to -724px which basically stays in the same position
+        document.getElementById("TitleLocation").style.marginTop = "725px";
+        //
+        document.getElementById("iframe").style.padding = "50px";
+        document.getElementById("iframe").style.height = "0px";
+        document.getElementById("iframe").style.width = "0px";
+        document.getElementById("objects").style.cursor = "grabbing";
+        e = e || window.event;
+        e.preventDefault();
+        // get the mouse cursor position at startup:
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        document.onmouseup = closeDragElement;
+        // call a function whenever the cursor moves:
+        document.onmousemove = elementDrag;
+      }
+
+      function elementDrag(e) {
+        e = e || window.event;
+        e.preventDefault();
+        // calculate the new cursor position:
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        // set the element's new position:
+        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+        elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+      }
+
+      function closeDragElement() {
+        /* stop moving when mouse button is released:*/
+
+        // change the paragraph (<p>) back to 3D Objects once you left go on the mouse.
+        document.getElementById("Title").innerHTML = "3D Objects";
+        document.getElementById("Title").style.marginTop = "16px";
+        document.getElementById("TitleLocation").style.marginTop = "16px";
+        document.getElementById("iframe").style.padding = "0px";
+        document.getElementById("iframe").style.height = "705px";
+        document.getElementById("iframe").style.width = "845px";
+        document.getElementById("objects").style.cursor = "grab";
+        document.onmouseup = null;
+        document.onmousemove = null;
+      }
+    }
+  </script>
+
+</body>
+
+</html>

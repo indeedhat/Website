@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>3D Cube</title>
+    </head>
+
+    <body style="background-color: #202020;">
+
+      <div class="Controls">
+        <h1 style="margin-left: 22%;">Controls</h1>
+        <p style="margin-left: 22%;">W = Up</p>
+        <p style="margin-left: 22%;">A = Left</p>
+        <p style="margin-left: 22%;">S = Down</p>
+        <p style="margin-left: 22%;">D = Right</p>
+      </div>
+
+      <a href="#" data-keybind="w"></a>
+      <a href="3D-Cube(left).html" data-keybind="a"></a>
+      <a href="3D-Cube(down).html" data-keybind="s"></a>
+      <a href="3D-Cube(right).html" data-keybind="d"></a>
+
+      <div class="cube-container">
+          <div class="cube">
+          <figure class="side front" style="text-align: center;"><p style="padding: 37.5%;">front</p></figure>
+            <figure class="side back" style="text-align: center;"><p style="padding: 37.5%;">back</p></figure>
+            <figure class="side left" style="text-align: center;"><p style="padding: 37.5%;">left</p></figure>
+            <figure class="side right" style="text-align: center;"><p style="padding: 37.5%;">right</p></figure>
+            <figure class="side top" style="text-align: center;"><p style="padding: 37.5%;">top</p></figure>
+            <figure class="side bottom" style="text-align: center;"><p style="padding: 37.5%;">bottom</p></figure>
+          </div>
+      </div>
+      <style>
+          body {
+            margin:0 auto;
+          }
+
+          p, h1 {
+            color: #fff;
+          }
+
+          .Controls {
+            width: 216px;
+            margin-top: 25px;
+            margin-left: -10px;
+          }
+
+          .cube-container {
+            height: 250px;
+            top: 40%;
+            left: 40%;
+            perspective: 1000px;
+            perspective-origin: 65%;
+            position: absolute;
+            width: 280px;
+          }
+
+          .cube {  
+            height: 94%;
+            position: absolute;
+            transform-style: preserve-3d;
+            animation: spin 5s linear infinite;
+          }
+
+          .side {
+            border: 1px solid #00ff88;
+            background-color: #202020;
+            height: 200px;
+            position: absolute;
+            width: 200px;
+          }
+
+          .front {
+            transform: translateZ(100px);
+          }
+          .back {
+            transform: rotateX(180deg) translateZ(100px);
+          }
+          .left {
+            transform: rotateY(-90deg) translateZ(100px);
+          }
+          .right {
+            transform: rotateY(90deg) translateZ(100px);
+          }
+          .top {
+            transform: rotateX(90deg) translateZ(100px);
+          }
+          .bottom {
+            transform: rotateX(-90deg) translateZ(100px);
+          }
+          
+          @keyframes spin {
+            0% {
+              transform:rotateX(0deg);
+            }
+            100% {
+              transform:rotateX(360deg);
+            }
+          }
+      </style>
+
+      <script>
+      
+        document.body.addEventListener("keypress", ev => {
+            const link = document.querySelector(`[data-keybind=${ev.key}`);
+            if (link) location.href = link.getAttribute("href");
+        });
+      
+      </script>
+
+    </body>
+
+</html>

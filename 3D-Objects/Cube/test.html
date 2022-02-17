@@ -1,0 +1,55 @@
+<html>
+
+    <head>
+        <title>3D Cube</title>
+
+        <style>
+            body {
+                margin: 0 auto;
+            }
+
+            .cube-container,
+            .cube-container-free {
+                top: 20%;
+                left: 35%;
+                perspective: 1000px;
+                perspective-origin: 100%;
+                position: absolute;
+            }
+
+            .cube {
+                animation: spin 15s linear infinite;
+            }
+
+            .side {
+                background-image: url('https://m.media-amazon.com/images/I/51oSAyOEEzS.jpg');
+                height: 495px;
+                width: 320px;
+            }
+        </style>
+
+    </head>
+
+    <body style="background-color: #0000007d;overflow-x: hidden;overflow-y: hidden;">
+
+        <div class="cube-container">
+            <div class="cube">
+                <figure class="side front"></figure>
+            </div>
+        </div>
+
+        <style>
+            @keyframes spin {
+                0% {
+                    transform: rotateY(0);
+                }
+
+                100% {
+                    transform: rotateY(360deg);
+                }
+            }
+        </style>
+
+    </body>
+
+</html>
