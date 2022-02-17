@@ -1,0 +1,787 @@
+<html style="scroll-behavior: smooth;">
+
+<head>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .cube-container {
+      height: 245px;
+      top: 40%;
+      left: 45%;
+      perspective: 1000px;
+      perspective-origin: 65%;
+      position: absolute;
+      width: 265px;
+    }
+
+    .cube {
+      transform-style: preserve-3d;
+      animation: spin 6s linear infinite;
+      height: 82%;
+      width: 71%;
+    }
+
+    .side {
+      border: 1px solid #fff;
+      background-color: #0a1724a6;
+      height: 200px;
+      position: absolute;
+      width: 200px;
+    }
+
+    .front {
+      transform: translateZ(100px);
+    }
+
+    .back {
+      transform: rotateX(180deg) translateZ(100px);
+    }
+
+    .left {
+      transform: rotateY(-90deg) translateZ(100px);
+    }
+
+    .right {
+      transform: rotateY(90deg) translateZ(100px);
+    }
+
+    .top {
+      transform: rotateX(90deg) translateZ(100px);
+    }
+
+    .bottom {
+      transform: rotateX(-90deg) translateZ(100px);
+    }
+
+    body,
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    ul {
+      font-family: "Poppins-Regular";
+      color: white;
+      font-size: 13px;
+      margin: 0;
+    }
+
+    a {
+      color: transparent;
+    }
+
+    .inner .image-holder {
+      width: 50%;
+    }
+
+    .inner form {
+      width: 360px;
+      margin: 0 auto;
+    }
+
+    .inner h3 {
+      text-transform: uppercase;
+      font-size: 25px;
+      font-family: "Poppins-SemiBold";
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    @media (max-width: 1199px) {
+      .wrapper {
+        background-position: right center;
+      }
+    }
+
+    @media (max-width: 991px) {
+      .inner form {
+        padding-top: 10px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .inner {
+        display: block;
+      }
+
+      .inner .image-holder {
+        width: 100%;
+      }
+
+      .inner form {
+        padding: 40px 0 30px;
+      }
+    }
+
+    .Nav1 {
+      animation: slideRight1 3s 1;
+    }
+
+    @keyframes slideRight1 {
+      0% {
+        margin-left: -60px;
+        opacity: 0;
+      }
+
+      10% {
+        margin-left: 30px;
+        opacity: 50%;
+      }
+
+      20% {
+        margin-left: 0;
+        opacity: 100%;
+      }
+
+      30% {
+        margin-left: 0;
+      }
+
+      40% {
+        margin-left: 0;
+      }
+
+      50% {
+        margin-left: 0;
+      }
+
+      60% {
+        margin-left: 0;
+      }
+
+      70% {
+        margin-left: 0;
+      }
+
+      80% {
+        margin-left: 0;
+      }
+
+      90% {
+        margin-left: 0;
+      }
+
+      100% {
+        margin-left: 0;
+      }
+    }
+
+    .Nav2 {
+      animation: slideRight2 3s 1;
+    }
+
+    @keyframes slideRight2 {
+      0% {
+        margin-left: -60px;
+        opacity: 0;
+      }
+
+      10% {
+        margin-left: -60px;
+        opacity: 0;
+      }
+
+      20% {
+        margin-left: 30px;
+        opacity: 50%;
+      }
+
+      30% {
+        margin-left: 0;
+        opacity: 100%;
+      }
+
+      40% {
+        margin-left: 0;
+      }
+
+      50% {
+        margin-left: 0;
+      }
+
+      60% {
+        margin-left: 0;
+      }
+
+      70% {
+        margin-left: 0;
+      }
+
+      80% {
+        margin-left: 0;
+      }
+
+      90% {
+        margin-left: 0;
+      }
+
+      100% {
+        margin-left: 0;
+      }
+    }
+
+    .Nav3 {
+      animation: slideRight3 3s 1;
+    }
+
+    @keyframes slideRight3 {
+      0% {
+        margin-left: -60px;
+        opacity: 0;
+      }
+
+      10% {
+        margin-left: -60px;
+        opacity: 0;
+
+      }
+
+      20% {
+        margin-left: -60px;
+        opacity: 0;
+      }
+
+      30% {
+        margin-left: 30px;
+        opacity: 50%;
+      }
+
+      40% {
+        margin-left: 0;
+        opacity: 100%;
+      }
+
+      50% {
+        margin-left: 0;
+      }
+
+      60% {
+        margin-left: 0;
+      }
+
+      70% {
+        margin-left: 0;
+      }
+
+      80% {
+        margin-left: 0;
+      }
+
+      90% {
+        margin-left: 0;
+      }
+
+      100% {
+        margin-left: 0;
+      }
+    }
+
+    .sidenav {
+      position: fixed;
+      list-style-type: none;
+      padding: 5px;
+    }
+
+    .sidenav a {
+      text-decoration: none;
+      font-size: 25px;
+      color: #49535e;
+      transition: 0.3s;
+
+    }
+
+    .sidenav a:hover {
+      color: #ffffff;
+      transition: 0.3s;
+    }
+  </style>
+</head>
+
+<body onload="loadedPage()" style="background-color: #0a1724; color: white;">
+
+  <div class="cube-container" id="loading" style="opacity: 1;">
+    <div class="cube">
+      <figure class="side front" style="text-align: center;"></figure>
+      <figure class="side back" style="text-align: center;"></figure>
+      <figure class="side left" style="text-align: center;"></figure>
+      <figure class="side right" style="text-align: center;"></figure>
+      <figure class="side top" style="text-align: center;"></figure>
+      <figure class="side bottom" style="text-align: center;"></figure>
+    </div>
+  </div>
+
+  <style>
+    @keyframes spin {
+      0% {
+        transform: rotateY(0) rotateX(0);
+      }
+
+      100% {
+        transform: rotateY(720deg) rotateX(-1080deg);
+      }
+    }
+  </style>
+
+  <script>
+
+    function loadedPage() {
+      document.getElementById("loaded").style.opacity = "1";
+      document.getElementById("loaded").style.transition = "1s";
+      document.getElementById("loading").style.opacity = "0";
+      document.getElementById("loading").style.visibility = "hidden";
+      document.getElementById("loading").style.pointerEvents = "none";
+    }
+
+  </script>
+
+  <ul class="sidenav">
+    <li class="Nav1"><a href="#college">College</a></li>
+    <li class="Nav2"><a href="#projects">Projects</a></li>
+    <li class="Nav3"><a href="#contact">Contact</a></li>
+  </ul>
+
+  <div style="
+    text-align: -moz-center; 
+    text-align: -webkit-center; 
+    opacity: 0;
+    " id="loaded">
+
+    <div class="wrapper" style="
+      min-height: 20vh;
+      display: flex;
+      align-items: center;
+      ">
+
+      <div class="inner" style="
+        margin: 0 auto;
+        ">
+
+        <h1 style="
+          font-size: 40px;
+          ">Dominic's Portfolio
+
+        </h1>
+
+      </div>
+
+    </div>
+
+    <div class="wrapper" style="
+      min-height: 40vh;
+      display: flex;
+      align-items: center;
+      ">
+
+      <div class="inner" style="
+        border-radius: 20px;
+        border: 2px solid #00000000;
+        margin: 0 auto;
+        ">
+
+        <div class="intro" style="
+          border-radius: 50%;
+          border: 5px solid #fff;
+          background-size: contain;
+          background-image: url('Dominic.jpg');
+          background-position: center;
+          height: 335px;
+          width: 254px;
+          ">
+
+        </div>
+
+        <div style="
+          height: 300px;
+          max-width: 840px;
+          ">
+
+          <p style="
+            color: white;
+            font-size: 20px;
+            padding: 15px;
+            ">Hello, I'm Dominic and I like to do web development in my spare time. I created by first website
+            when I was 19, I was amazed how easy it was to understand the basics which gives me the
+            confidence to keep going. I enjoy playing games with my friends whilst streaming on
+            youtube. I also taught myself how to play an electric guitar and I played in a concert at
+            the Tall Ships and Sunderland Empire. In july 2019 I completed a the Duke Of Edinburgh
+            Gold Award, it was very challenging and hard work.
+          </p>
+
+          <p style="
+          color: white;
+          font-size: 20px;
+          padding: 15px;
+          ">I have just finished level 2 BTEC I.T at Gatehead College and I would like to show you some of my
+            college work.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="wrapper" style="
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      padding: 10vh;">
+
+      <div class="inner" style="
+        border-radius: 20px;
+        border: 2px solid #00000000;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.26);
+        margin: 0 auto;
+        max-width: 1300px;">
+
+        <p id="college" style="font-size: 35px;margin: 20px;">College</p>
+
+        <a href="app-game.html">
+          <div onmouseover="mobileHover(this)" onmouseout="mobileUnhover(this)" style="
+            border-radius: 20px;
+            border: 2px solid white;
+            height: 250px;
+            width: 400px;
+            background-color: #0a1724;
+            margin: 5px;
+            display: inline-block;
+            cursor: pointer;">
+
+            <p id="mobile-app" style="
+              font-size: 20px;
+              opacity: 0;
+              transition: all 0.5s ease 0s;
+              margin: 109px 20px 111px">Mobile app/game
+            </p>
+
+          </div>
+        </a>
+
+        <script>
+
+          function mobileHover() {
+            document.getElementById("mobile-app").style.opacity = "1";
+          }
+
+          function mobileUnhover() {
+            document.getElementById("mobile-app").style.opacity = "0";
+          }
+
+        </script>
+
+        <a href="spreadsheet.html">
+          <div onmouseover="spreadsHover(this)" onmouseout="spreadsUnhover(this)" style="
+            border-radius: 20px;
+            border: 2px solid white;
+            height: 250px;
+            width: 400px;
+            background-color: #0a1724;
+            margin: 5px;
+            display: inline-block;
+            cursor: pointer;">
+
+            <p id="spreadsheet" style="
+              font-size: 20px;
+              opacity: 0;
+              transition: all 0.5s ease 0s;
+              margin: 109px 20px 111px;">Spreadsheet
+            </p>
+
+          </div>
+        </a>
+
+        <script>
+
+          function spreadsHover() {
+            document.getElementById("spreadsheet").style.opacity = "1";
+          }
+
+          function spreadsUnhover() {
+            document.getElementById("spreadsheet").style.opacity = "0";
+          }
+
+        </script>
+
+        <a href="database.html">
+          <div onmouseover="dataHover(this)" onmouseout="dataUnhover(this)" style="
+            border-radius: 20px;
+            border: 2px solid white;
+            height: 250px;
+            width: 400px;
+            background-color: #0a1724;
+            margin: 5px;
+            display: inline-block;
+            cursor: pointer;">
+
+            <p id="database" style="
+              font-size: 20px;
+              opacity: 0;
+              transition: all 0.5s ease 0s;
+              margin: 109px 20px 111px">Database
+
+            </p>
+
+          </div>
+        </a>
+
+        <script>
+
+          function dataHover() {
+            document.getElementById("database").style.opacity = "1";
+          }
+
+          function dataUnhover() {
+            document.getElementById("database").style.opacity = "0";
+          }
+
+        </script>
+
+        <a href="pc-build.html">
+          <div onmouseover="pcHover(this)" onmouseout="pcUnhover(this)" style="
+            border-radius: 20px;
+            border: 2px solid white;
+            height: 250px;
+            width: 400px;
+            background-color: #0a1724;
+            margin: 5px;
+            display: inline-block;
+            cursor: pointer;">
+
+            <p id="pc-build" style="
+              font-size: 20px;
+              opacity: 0;
+              transition: all 0.5s ease 0s;
+              margin: 109px 20px 111px">PC Build
+
+            </p>
+
+          </div>
+        </a>
+
+        <script>
+
+          function pcHover() {
+            document.getElementById("pc-build").style.opacity = "1";
+          }
+
+          function pcUnhover() {
+            document.getElementById("pc-build").style.opacity = "0";
+          }
+
+        </script>
+
+      </div>
+    </div>
+
+    <div class="wrapper" style="min-height: 70vh;display: flex;align-items: center;padding: 10vh;">
+      <div class="inner"
+        style="border-radius: 20px;border: 2px solid #00000000;padding: 20px;background: rgba(255, 255, 255, 0.26);margin: 0 auto;max-width: 1300px;">
+
+        <p id="projects" style="font-size: 35px;margin: 20px;">Projects</p>
+
+        <a href="uploader.html">
+          <div onmouseover="upHover(this)" onmouseout="upUnhover(this)" style="
+            border-radius: 20px;
+            border: 2px solid white;
+            height: 250px;
+            width: 400px;
+            background-color: #0a1724;
+            margin: 5px;
+            display: inline-block;
+            cursor: pointer;">
+
+            <p id="uploader" style="
+              font-size: 20px;
+              opacity: 0;
+              transition: all 0.5s ease 0s;
+              margin: 109px 20px 111px">Uploader
+            </p>
+
+          </div>
+        </a>
+
+        <script>
+
+          function upHover() {
+            document.getElementById("uploader").style.opacity = "1";
+          }
+
+          function upUnhover() {
+            document.getElementById("uploader").style.opacity = "0";
+          }
+
+        </script>
+
+        <a href="platform.html">
+          <div onmouseover="platfHover(this)" onmouseout="platfUnhover(this)" style="
+            border-radius: 20px;
+            border: 2px solid white;
+            height: 250px;
+            width: 400px;
+            background-color: #0a1724;
+            margin: 5px;
+            display: inline-block;
+            cursor: pointer;">
+
+            <p id="platform" style="
+              font-size: 20px;
+              opacity: 0;
+              transition: all 0.5s ease 0s;
+              margin: 109px 20px 111px;">Platform
+            </p>
+
+          </div>
+        </a>
+
+        <script>
+
+          function platfHover() {
+            document.getElementById("platform").style.opacity = "1";
+          }
+
+          function platfUnhover() {
+            document.getElementById("platform").style.opacity = "0";
+          }
+
+        </script>
+
+        <a href="maze.html">
+          <div onmouseover="mazeHover(this)" onmouseout="mazeUnhover(this)" style="
+            border-radius: 20px;
+            border: 2px solid white;
+            height: 250px;
+            width: 400px;
+            background-color: #0a1724;
+            margin: 5px;
+            display: inline-block;
+            cursor: pointer;">
+
+            <p id="maze" style="
+              font-size: 20px;
+              opacity: 0;
+              transition: all 0.5s ease 0s;
+              margin: 109px 20px 111px">Maze game
+
+            </p>
+
+          </div>
+        </a>
+
+        <script>
+
+          function mazeHover() {
+            document.getElementById("maze").style.opacity = "1";
+          }
+
+          function mazeUnhover() {
+            document.getElementById("maze").style.opacity = "0";
+          }
+
+        </script>
+
+        <a href="search.html">
+          <div onmouseover="searchHover(this)" onmouseout="searchUnhover(this)" style="
+            border-radius: 20px;
+            border: 2px solid white;
+            height: 250px;
+            width: 400px;
+            background-color: #0a1724;
+            margin: 5px;
+            display: inline-block;
+            cursor: pointer;">
+
+            <p id="search" style="
+              font-size: 20px;
+              opacity: 0;
+              transition: all 0.5s ease 0s;
+              margin: 109px 20px 111px">Search Engine
+
+            </p>
+
+          </div>
+        </a>
+
+        <script>
+
+          function searchHover() {
+            document.getElementById("search").style.opacity = "1";
+          }
+
+          function searchUnhover() {
+            document.getElementById("search").style.opacity = "0";
+          }
+
+        </script>
+
+        <a href="media.html">
+          <div onmouseover="mediaHover(this)" onmouseout="mediaUnhover(this)" style="
+            border-radius: 20px;
+            border: 2px solid white;
+            height: 250px;
+            width: 400px;
+            background-color: #0a1724;
+            margin: 5px;
+            display: inline-block;
+            cursor: pointer;">
+
+            <p id="media" style="
+              font-size: 20px;
+              opacity: 0;
+              transition: all 0.5s ease 0s;
+              margin: 109px 20px 111px">Digital Media
+
+            </p>
+
+          </div>
+        </a>
+
+        <script>
+
+          function mediaHover() {
+            document.getElementById("media").style.opacity = "1";
+          }
+
+          function mediaUnhover() {
+            document.getElementById("media").style.opacity = "0";
+          }
+
+        </script>
+      </div>
+    </div>
+
+    <div class="wrapper" style="
+      min-height: 25vh;
+      display: flex;
+      align-items: center;
+      ">
+
+      <div class="inner" style="
+        border-radius: 20px;
+        border: 2px solid #00000000;
+        margin: 0 auto;
+        ">
+
+        <div style="
+          max-width: 840px;
+          ">
+
+          <p id="contact" style="
+            color: white;
+            font-size: 20px;
+            padding: 15px;
+            ">Hi if you're interested in employing me please contact me on 07484178316 /
+            dominicyoungjackson@gmail.com I would be happy to hear from you.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>

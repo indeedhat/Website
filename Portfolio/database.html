@@ -1,0 +1,292 @@
+<html style="scroll-behavior: smooth;">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .cube-container {
+            height: 245px;
+            top: 40%;
+            left: 45%;
+            perspective: 1000px;
+            perspective-origin: 65%;
+            position: absolute;
+            width: 265px;
+        }
+
+        .cube {
+            transform-style: preserve-3d;
+            animation: spin 6s linear infinite;
+            height: 82%;
+            width: 71%;
+        }
+
+        .side {
+            border: 1px solid #fff;
+            background-color: #0a1724a6;
+            height: 200px;
+            position: absolute;
+            width: 200px;
+        }
+
+        .front {
+            transform: translateZ(100px);
+        }
+
+        .back {
+            transform: rotateX(180deg) translateZ(100px);
+        }
+
+        .left {
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+
+        .right {
+            transform: rotateY(90deg) translateZ(100px);
+        }
+
+        .top {
+            transform: rotateX(90deg) translateZ(100px);
+        }
+
+        .bottom {
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+
+        p {
+            max-width: 840px;
+        }
+
+        body,
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        ul {
+            font-family: "Poppins-Regular";
+            color: white;
+            font-size: 13px;
+            margin: 0;
+        }
+
+        a {
+            color: transparent;
+        }
+
+        .inner .image-holder {
+            width: 50%;
+        }
+
+        .inner form {
+            width: 360px;
+            margin: 0 auto;
+        }
+
+        .inner h3 {
+            text-transform: uppercase;
+            font-size: 25px;
+            font-family: "Poppins-SemiBold";
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        @media (max-width: 1199px) {
+            .wrapper {
+                background-position: right center;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .inner form {
+                padding-top: 10px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .inner {
+                display: block;
+            }
+
+            .inner .image-holder {
+                width: 100%;
+            }
+
+            .inner form {
+                padding: 40px 0 30px;
+            }
+        }
+
+        img {
+            max-width: 850px;
+        }
+    </style>
+</head>
+
+<body onload="loadedPage()" style="background-color: #0a1724; color: white;">
+    <div class="cube-container" id="loading" style="opacity: 1;">
+        <div class="cube">
+            <figure class="side front" style="text-align: center;"></figure>
+            <figure class="side back" style="text-align: center;"></figure>
+            <figure class="side left" style="text-align: center;"></figure>
+            <figure class="side right" style="text-align: center;"></figure>
+            <figure class="side top" style="text-align: center;"></figure>
+            <figure class="side bottom" style="text-align: center;"></figure>
+        </div>
+    </div>
+    <style>
+        @keyframes spin {
+            0% {
+                transform: rotateY(0) rotateX(0);
+            }
+
+            100% {
+                transform: rotateY(720deg) rotateX(-1080deg);
+            }
+        }
+    </style>
+
+    <script>
+        function loadedPage() {
+            document.getElementById("loaded").style.opacity = "1";
+            document.getElementById("loaded").style.transition = "1s";
+            document.getElementById("loading").style.opacity = "0";
+            document.getElementById("loading").style.visibility = "hidden";
+            document.getElementById("loading").style.pointerEvents = "none";
+        }
+    </script>
+
+    <div id="loaded" style="
+        text-align: -moz-center; 
+        text-align: -webkit-center; 
+        opacity: 0;
+        ">
+
+        <a href="index.html" style="
+            position: fixed;
+            margin: 2% 10% 10% -47%;
+            background-color: white;
+            color: black;
+            padding: 10px 10px;
+            width: 85px;
+            border-radius: 10px;
+            border: 5px solid #22374d00;"
+            >Home
+        </a>
+
+        <div class="wrapper" style="
+            min-height: 20vh;
+            display: flex;
+            align-items: center;
+            ">
+
+            <div class="inner" style="
+                margin: 0 auto;
+                ">
+
+                <h1 style="
+                    font-size: 40px;
+                    ">Database
+
+                </h1>
+
+            </div>
+
+        </div>
+
+        <div class="wrapper" style="
+            min-height: 40vh;
+            display: flex;
+            align-items: center;
+            ">
+
+            <div class="inner" style="
+                border-radius: 20px;
+                border: 2px solid #00000000;
+                margin: 0 auto;
+                ">
+
+                <div style="
+                    height: 300px;
+                    ">
+
+                    <p style="
+                        color: white;
+                        font-size: 20px;
+                        padding: 15px;
+                        ">This assignment required me to create a database for a Home Group. The Home Group needs to be
+                        able to record and access all the details of the properties from their different
+                        development.
+                    </p>
+                    
+                    <br>
+
+                    <p style="
+                        color: white;
+                        font-size: 20px;
+                        padding: 15px;
+                        ">I started by
+                        creating an ERD (Entity Relationship Diagram) to design a database then I created a
+                        wireframe for the data entry forms. I continued by designing a main menu enabling the
+                        user to add, remove and view data from the database. The database was fully tested and
+                        proved to work well.
+                    </p>
+
+                    <br>
+
+                    <div class="wrapper" style="
+                        min-height: 70vh;
+                        display: flex;
+                        align-items: center;
+                        padding: 10vh;
+                        max-width: 190vh;
+                        ">
+
+                        <div class="inner" style="
+                            padding: 20px;
+                            margin: 0 auto;
+                            max-width: 1300px;
+                            ">
+
+                            <img src="erd.png">
+
+                            <br><br>
+                            
+                            <img src="wireframe1.png">
+
+                            <br><br>
+
+                            <img src="wireframe2.png">
+
+                            <br><br>
+
+                            <img src="wireframe3.png">
+
+                            <br><br>
+
+                            <img src="wireframe4.png">
+
+                            <br><br>
+
+                            <img src="main-menu.png">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
