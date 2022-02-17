@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Start</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    </head>
+    <body>
+
+        <div class="wrap-layer">
+            <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <a href='step6 N.html' data-keybind="w"></a>
+                <a href='step7 W.html' data-keybind="a"></a>
+                <a href='#' data-keybind="s"></a>
+                <a href='step7 E.html' data-keybind="d"></a>
+
+                <polygon style="fill:#59c1ff;stroke-width:0.1;cursor: not-allowed;stroke:  #59c1ff !important;" points="40.00,40.00, 60.00,40.00, 60.00,45.00, 40.00,45.00"></polygon>
+				<polygon points="30.0,40.0, 40.0,40.0, 20.0,20.0, 20.0,40.0" style="fill: #59c1ff;stroke-width: 0.1;cursor: not-allowed;stroke: #59c1ff !important;"></polygon>
+				<polygon style="fill:#c62a2a;stroke-width:0.1;cursor: not-allowed;" points="55.00,55.00, 55.00,45.00, 45.00,45.00, 45.00,55.00"></polygon>
+				<polygon points="60.00,60.00, 60.00,40.00, 55.00,45.00, 55.00,55.00" style="fill:#c62a2a;stroke-width:0.1;cursor: not-allowed;"></polygon>
+				<polygon points="40.00,60.00, 60.00,60.00, 55.00,55.00, 45.00,55.00" style="fill:#6c6c6c;stroke-width:0.1;cursor: not-allowed;"></polygon>
+				<polygon style="fill:#c62a2a;stroke-width:0.1;cursor: not-allowed;" points="40.00,60.00, 40.00,40.00, 45.00,45.00, 45.00,55.00"></polygon>
+                <polygon points="80,80, 80,20, 100,0, 100,100" style="fill:#c62a2a;stroke-width:0.1;cursor: not-allowed;"></polygon>
+                <polygon points="80,20, 20,20, 0,0,   100,0" style="fill:#59c1ff;stroke-width:0.1;cursor: not-allowed;stroke:  #59c1ff !important;"></polygon>
+                <polygon points="80,80, 20,80, 0,100, 100,100" style="fill:#6c6c6c;stroke-width:0.1;cursor: not-allowed;"></polygon>
+                <polygon points="60,60, 40,60, 20,80, 80,80" style="fill:#6c6c6c;stroke-width:0.1;cursor: not-allowed;"></polygon>
+                <polygon style="fill:#59c1ff;stroke-width:0.1;cursor: not-allowed;stroke: #59c1ff !important;" points="80.0,40.0, 20.0,40.0, 20.0,20.0, 80.0,20.0"></polygon>
+                <polygon style="fill:#6c6c6c;stroke-width:0.1;cursor: not-allowed;" points="70.0,60.0, 60.0,60.0, 80.0,80.0, 80.0,60.0"></polygon>
+                <polygon style="fill:#c62a2a;stroke-width:0.1;cursor: not-allowed;" points="80.0,60.0, 80.0,40.0, 60.0,40.0, 60.0,60.0"></polygon>
+            	<polygon points="20,80, 20,20, 0,0,   0,100" style="fill:#c62a2a;stroke-width:0.1;cursor: not-allowed;"></polygon>
+				<polygon points="20.0,80.0, 20.0,20.0, 40.0,40.0, 40.0,60.0" style="fill:#c62a2a;stroke-width:0.1;cursor: not-allowed;"></polygon>
+            </svg>
+        </div>
+
+        <style>
+        	body, html {
+			  height: 100%;
+			  margin: 0;
+			  scrollbar-width: none;
+			  overflow: hidden;
+			}	
+			
+			.wrap-layer {
+				position:absolute;
+				top:0;	
+				height:100%;	
+				width:100%;
+				min-height: 100%;
+				min-width: 100%;
+			}
+			
+			.content {
+				position: absolute;
+				z-index:1;
+				top: 50%;		
+				right:55%;
+				color: #fff;
+			}
+			
+			svg {
+				width: 100%;
+				height: 100%;
+				min-height: 100%;
+			}
+			
+			#play {
+				content: "\e907";
+				font-family: 'icomoon' !important;
+				fill: #fff;
+				font-size:5px;
+			}
+			
+			area {
+			  display: none;
+			}
+			
+			h1 .headerInner, h2 .headerInner {
+			    transform: scale(.5, 1) translateX(-50%);
+			}
+			
+			.headerInner {
+			    padding: .125em .25em;
+			    background: #888;
+			        background-color: rgb(136, 136, 136);
+			    color: #111;
+			    display: inline-block;
+			}
+            polygon {
+                stroke: rgba(255, 255, 255, 0.103) !important;
+            }
+        </style>
+
+        <script>
+
+            document.body.addEventListener("keypress", ev => {
+                const link = document.querySelector(`[data-keybind=${ev.key}`);
+                if (link) location.href = link.getAttribute("href");
+            });
+
+        </script>
+
+    </body>
+</html>
