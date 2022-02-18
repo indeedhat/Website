@@ -304,21 +304,17 @@
 
     <script>
 
-      //Make the DIV element draggagle:
       dragElement(document.getElementById("obengine"));
 
       function dragElement(elmnt) {
         var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
         if (document.getElementById(elmnt.id + "header")) {
-          /* if present, the header is where you move the DIV from:*/
           document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
         } else {
-          /* otherwise, move the DIV from anywhere inside the DIV:*/
           elmnt.onmousedown = dragMouseDown;
         }
 
         function dragMouseDown(e) {
-          // change the paragraph (<p>) to I'm being dragged.
           document.getElementById("Tengine").innerHTML = "I'm being dragged!!!";
 
           document.getElementById("engine-title").innerHTML = "Active";
@@ -351,7 +347,7 @@
           document.getElementById("obproject").style.zIndex = "0";
 
           document.getElementById("Tengine").style.marginTop = "725px";
-          // change the height from 740px to -724px which basically stays in the same position
+
           document.getElementById("search").style.height = "0px";
           document.getElementById("search").style.width = "0px";
           document.getElementById("uploader").style.height = "0px";
@@ -361,31 +357,29 @@
           document.getElementById("obengine").style.cursor = "grabbing";
           e = e || window.event;
           e.preventDefault();
-          // get the mouse cursor position at startup:
+
           pos3 = e.clientX;
           pos4 = e.clientY;
           document.onmouseup = closeDragElement;
-          // call a function whenever the cursor moves:
+
           document.onmousemove = elementDrag;
         }
 
         function elementDrag(e) {
           e = e || window.event;
           e.preventDefault();
-          // calculate the new cursor position:
+
           pos1 = pos3 - e.clientX;
           pos2 = pos4 - e.clientY;
           pos3 = e.clientX;
           pos4 = e.clientY;
-          // set the element's new position:
+
           elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
           elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
         }
 
         function closeDragElement() {
-          /* stop moving when mouse button is released:*/
 
-          // change the paragraph (<p>) back to search once you left go on the mouse.
           document.getElementById("Tengine").innerHTML = "Search Engine";
           document.getElementById("Tengine").style.marginTop = "-143px";
 
@@ -476,21 +470,17 @@
 
     <script>
 
-      //Make the DIV element draggagle:
       dragElement(document.getElementById("obuploader"));
 
       function dragElement(elmnt) {
         var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
         if (document.getElementById(elmnt.id + "header")) {
-          /* if present, the header is where you move the DIV from:*/
           document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
         } else {
-          /* otherwise, move the DIV from anywhere inside the DIV:*/
           elmnt.onmousedown = dragMouseDown;
         }
 
         function dragMouseDown(e) {
-          // change the paragraph (<p>) to I'm being dragged.
           document.getElementById("Tuploader").innerHTML = "I'm being dragged!!!";
 
           document.getElementById("uploader-title").innerHTML = "Active";
@@ -523,7 +513,7 @@
           document.getElementById("obproject").style.zIndex = "0";
 
           document.getElementById("Tuploader").style.marginTop = "725px";
-          // change the height from 740px to -724px which basically stays in the same position
+
           document.getElementById("search").style.height = "0px";
           document.getElementById("search").style.width = "0px";
           document.getElementById("uploader").style.height = "0px";
@@ -533,31 +523,26 @@
           document.getElementById("obuploader").style.cursor = "grabbing";
           e = e || window.event;
           e.preventDefault();
-          // get the mouse cursor position at startup:
           pos3 = e.clientX;
           pos4 = e.clientY;
           document.onmouseup = closeDragElement;
-          // call a function whenever the cursor moves:
           document.onmousemove = elementDrag;
         }
 
         function elementDrag(e) {
           e = e || window.event;
           e.preventDefault();
-          // calculate the new cursor position:
+
           pos1 = pos3 - e.clientX;
           pos2 = pos4 - e.clientY;
           pos3 = e.clientX;
           pos4 = e.clientY;
-          // set the element's new position:
+
           elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
           elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
         }
 
         function closeDragElement() {
-          /* stop moving when mouse button is released:*/
-
-          // change the paragraph (<p>) back to file uploader once you left go on the mouse.
           document.getElementById("Tuploader").innerHTML = "File Uploader";
           document.getElementById("Tuploader").style.marginTop = "-143px";
           document.getElementById("uploader").style.margin = "-88px 0px 71px -105px";
@@ -642,22 +627,17 @@
     </script>
 
     <script>
-
-      //Make the DIV element draggagle:
       dragElement(document.getElementById("obproject"));
 
       function dragElement(elmnt) {
         var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
         if (document.getElementById(elmnt.id + "header")) {
-          /* if present, the header is where you move the DIV from:*/
           document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
         } else {
-          /* otherwise, move the DIV from anywhere inside the DIV:*/
           elmnt.onmousedown = dragMouseDown;
         }
 
         function dragMouseDown(e) {
-          // change the paragraph (<p>) to I'm being dragged.
           document.getElementById("Tproject").innerHTML = "I'm being dragged!!!";
 
           document.getElementById("project-title").innerHTML = "Active";
@@ -690,7 +670,7 @@
           document.getElementById("obproject").style.zIndex = "2";
 
           document.getElementById("Tproject").style.marginTop = "725px";
-          // change the height from 740px to -724px which basically stays in the same position
+
           document.getElementById("search").style.height = "0px";
           document.getElementById("search").style.width = "0px";
           document.getElementById("uploader").style.height = "0px";
@@ -700,31 +680,24 @@
           document.getElementById("obproject").style.cursor = "grabbing";
           e = e || window.event;
           e.preventDefault();
-          // get the mouse cursor position at startup:
           pos3 = e.clientX;
           pos4 = e.clientY;
           document.onmouseup = closeDragElement;
-          // call a function whenever the cursor moves:
           document.onmousemove = elementDrag;
         }
 
         function elementDrag(e) {
           e = e || window.event;
           e.preventDefault();
-          // calculate the new cursor position:
           pos1 = pos3 - e.clientX;
           pos2 = pos4 - e.clientY;
           pos3 = e.clientX;
           pos4 = e.clientY;
-          // set the element's new position:
           elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
           elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
         }
 
         function closeDragElement() {
-          /* stop moving when mouse button is released:*/
-
-          // change the paragraph (<p>) back to Projects once you left go on the mouse.
           document.getElementById("Tproject").innerHTML = "Project";
           document.getElementById("Tproject").style.marginTop = "-143px";
           document.getElementById("project").style.margin = "-88px 0px 71px -105px";
