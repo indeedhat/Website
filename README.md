@@ -12,7 +12,7 @@ I was asked by Gateshead College if my work could be shared on social media.
 In my spare time, I was learning more about math in programming for some of my projects like Maze game (https://techlm77.com/Custom Games/Maze/), Trigonometry and
 a 3D car (https://techlm77.com/test.html) / (https://techlm77.com/3D-Objects/Car/3D-Car(all).html). 
 
-The 3D car game (https://techlm77.com/test.html) is in very early development and it took time to create a way for the game engine work because 
+The 3D car game (https://techlm77.com/test.html) is in very early development and it took time to create a way for the game engine to work because 
 the 3D coordinates in CSS and JavaScript were difficult to figure out a way to make the car go forward then rotate whichever the user wanted to go.
 
 For example some projects like TempleOS, 3D Car, Trigonometry are inspired by Terry A. Davis (https://en.wikipedia.org/wiki/Terry_A._Davis).
