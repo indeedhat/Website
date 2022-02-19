@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    ul {
+      padding: 7px;
+      width: max-content;
+      margin-right: auto;
+      margin-left: auto;
+      margin-top: 50px;
+      position: sticky;
+      top: 10px;
+    }
+
+    li {
+      display: inline;
+    }
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: black;
+      transition: 1s;
+    }
+
+    a {
+      transition: 1s;
+      background-color: transparent;
+      border-radius: 5px;
+    }
+
+    a:hover {
+      background-color: #d9d9d9;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .test {
+      background-color: #00ffc3;
+      transition: 1s;
+    }
+
+    .test2 {
+      background-color: red;
+      transition: 1s;
+    }
+  </style>
+</head>
+
+<body style="font-family:Verdana;color:#aaaaaa;">
+
+  <script>
+    window.onscroll = function() {myFunction()};
+    
+    function myFunction() {
+      if (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250) {
+        document.getElementById("testP").className = "test";
+      } else if (document.body.scrollTop < 250 || document.documentElement.scrollTop < 250) {
+        document.getElementById("testP").className = "test2";
+      }
+    }
+    </script>
+
+  <ul>
+    <li><a href="#home" style="color: black;text-decoration: underline #00ffc3 2px;padding: 5px;">Home</a></li>
+    <li><a href="#news" style="text-decoration: none;color: black;padding: 5px;">Projects</a></li>
+    <li><a href="#contact" style="text-decoration: none;color: black;padding: 5px;">Contact</a></li>
+    <li><a href="#about" style="text-decoration: none;color: black;padding: 5px;">About</a></li>
+  </ul>
+
+  <p>Test</p>
+  <p>Test</p>
+  <p>Test</p>
+  <p>Test</p>
+  <p>Test</p>
+  <p>Test</p>
+  <p>Test</p>
+  <p>Test</p>
+  <p>Test</p>
+  <p>Test</p>
+  <p>Test</p>
+  <p>Test</p>
+  <p>Test</p>
+  <p>Test</p>
+  <p>Test</p>
+  <p id="testP">Test</p>
+  <p>Test</p>
+  <p>Test</p>
+  <p>Test</p>
+  <p>Test</p>
+  <p>Test</p>
+  <p>Test</p>
+  <p>Test</p>
+  <p>Test</p>
+  <p>Test</p>
+  <p>Test</p>
+  <p>Test</p>
+  <p>Test</p>
+  <p>Test</p>
+  <p>Test</p>
+  <p>Test</p>
+  <p>Test</p>
+  <p>Test</p>
+  <p>Test</p>
+  <p>Test</p>
+  <p>Test</p>
+
+</body>
+
+</html>
