@@ -43,75 +43,222 @@
       box-sizing: border-box;
     }
 
-    .test {
-      background-color: #00ffc3;
-      transition: 1s;
+    .div1,
+    .div2,
+    .div3,
+    .div4,
+    .div5,
+    .div6,
+    .div7,
+    .div8,
+    .div9,
+    .div10,
+    .div11,
+    .div12 {
+      opacity: 1;
+      transition: 0.5s;
     }
 
-    .test2 {
-      background-color: red;
-      transition: 1s;
+    .div1-,
+    .div2-,
+    .div3-,
+    .div4-,
+    .div5-,
+    .div6-,
+    .div7-,
+    .div8-,
+    .div9-,
+    .div10-,
+    .div11-,
+    .div12- {
+      opacity: 0;
+      transition: 0.5s;
     }
   </style>
 </head>
 
-<body style="font-family:Verdana;color:#aaaaaa;">
+<body>
 
   <script>
-    window.onscroll = function() {myFunction()};
-    
+    window.onscroll = function () { myFunction() };
+
     function myFunction() {
-      if (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250) {
-        document.getElementById("testP").className = "test";
-      } else if (document.body.scrollTop < 250 || document.documentElement.scrollTop < 250) {
-        document.getElementById("testP").className = "test2";
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        document.getElementById("div1").className = "div1";
+      } else if (document.body.scrollTop < 1 || document.documentElement.scrollTop < 1) {
+        document.getElementById("div1").className = "div1-";
+      }
+
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        document.getElementById("div2").className = "div2";
+      } else if (document.body.scrollTop < 1 || document.documentElement.scrollTop < 1) {
+        document.getElementById("div2").className = "div2-";
+      }
+
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        document.getElementById("div3").className = "div3";
+      } else if (document.body.scrollTop < 1 || document.documentElement.scrollTop < 1) {
+        document.getElementById("div3").className = "div3-";
+      }
+
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        document.getElementById("div4").className = "div4";
+      } else if (document.body.scrollTop < 1 || document.documentElement.scrollTop < 1) {
+        document.getElementById("div4").className = "div4-";
+      }
+
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        document.getElementById("div5").className = "div5";
+      } else if (document.body.scrollTop < 1 || document.documentElement.scrollTop < 1) {
+        document.getElementById("div5").className = "div5-";
+      }
+
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        document.getElementById("div6").className = "div6";
+      } else if (document.body.scrollTop < 1 || document.documentElement.scrollTop < 1) {
+        document.getElementById("div6").className = "div6-";
+      }
+
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        document.getElementById("div7").className = "div7";
+      } else if (document.body.scrollTop < 1 || document.documentElement.scrollTop < 1) {
+        document.getElementById("div7").className = "div7-";
+      }
+
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        document.getElementById("div8").className = "div8";
+      } else if (document.body.scrollTop < 1 || document.documentElement.scrollTop < 1) {
+        document.getElementById("div8").className = "div8-";
+      }
+
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        document.getElementById("div9").className = "div9";
+      } else if (document.body.scrollTop < 1 || document.documentElement.scrollTop < 1) {
+        document.getElementById("div9").className = "div9-";
+      }
+
+      if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+        document.getElementById("div10").className = "div10";
+      } else if (document.body.scrollTop < 1 || document.documentElement.scrollTop < 1) {
+        document.getElementById("div10").className = "div10-";
+      }
+
+      if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+        document.getElementById("div11").className = "div11";
+      } else if (document.body.scrollTop < 1 || document.documentElement.scrollTop < 1) {
+        document.getElementById("div11").className = "div11-";
+      }
+
+      if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+        document.getElementById("div12").className = "div12";
+      } else if (document.body.scrollTop < 1 || document.documentElement.scrollTop < 1) {
+        document.getElementById("div12").className = "div12-";
       }
     }
-    </script>
+  </script>
 
-  <ul>
+  <ul style="background-color: #ffffffc9;z-index: 100;">
     <li><a href="#home" style="color: black;text-decoration: underline #00ffc3 2px;padding: 5px;">Home</a></li>
     <li><a href="#news" style="text-decoration: none;color: black;padding: 5px;">Projects</a></li>
     <li><a href="#contact" style="text-decoration: none;color: black;padding: 5px;">Contact</a></li>
     <li><a href="#about" style="text-decoration: none;color: black;padding: 5px;">About</a></li>
   </ul>
 
-  <p>Test</p>
-  <p>Test</p>
-  <p>Test</p>
-  <p>Test</p>
-  <p>Test</p>
-  <p>Test</p>
-  <p>Test</p>
-  <p>Test</p>
-  <p>Test</p>
-  <p>Test</p>
-  <p>Test</p>
-  <p>Test</p>
-  <p>Test</p>
-  <p>Test</p>
-  <p>Test</p>
-  <p id="testP">Test</p>
-  <p>Test</p>
-  <p>Test</p>
-  <p>Test</p>
-  <p>Test</p>
-  <p>Test</p>
-  <p>Test</p>
-  <p>Test</p>
-  <p>Test</p>
-  <p>Test</p>
-  <p>Test</p>
-  <p>Test</p>
-  <p>Test</p>
-  <p>Test</p>
-  <p>Test</p>
-  <p>Test</p>
-  <p>Test</p>
-  <p>Test</p>
-  <p>Test</p>
-  <p>Test</p>
-  <p>Test</p>
+  <div style="width: 54%;margin-right: auto;margin-left: auto;position: relative;height: 1290px;">
+
+    <div style="border: 5px solid;width: 280px;height: 225px;float: left;margin: 30px 30px;">
+      <iframe src="../3D-Objects/Car/3D-Car(icon).html" id="div1" class="div1-"
+        style="border: none;width: 145px;height: 120px;position: relative;top: 0%;left: 23%;"></iframe><br>
+
+      <p>Desc</p>
+    </div>
+
+    <div style="border: 5px solid;width: 280px;height: 225px;float: left;margin: 30px 30px;">
+      <iframe src="../3D-Objects/Car/3D-Car(icon).html" id="div2" class="div2-"
+        style="border: none;width: 145px;height: 120px;position: relative;top: 0%;left: 23%;"></iframe><br>
+
+      <p>Desc</p>
+    </div>
+
+    <div style="border: 5px solid;width: 280px;height: 225px;float: left;margin: 30px 30px;">
+      <iframe src="../3D-Objects/Car/3D-Car(icon).html" id="div3" class="div3-"
+        style="border: none;width: 145px;height: 120px;position: relative;top: 0%;left: 23%;"></iframe><br>
+
+      <p>Desc</p>
+    </div>
+
+    <div style="border: 5px solid;width: 280px;height: 225px;float: left;margin: 30px 30px;">
+      <iframe src="../3D-Objects/Car/3D-Car(icon).html" id="div4" class="div4-"
+        style="border: none;width: 145px;height: 120px;position: relative;top: 0%;left: 23%;"></iframe><br>
+
+      <p>Desc</p>
+    </div>
+
+    <div style="border: 5px solid;width: 280px;height: 225px;float: left;margin: 30px 30px;">
+      <iframe src="../3D-Objects/Car/3D-Car(icon).html" id="div5" class="div5-"
+        style="border: none;width: 145px;height: 120px;position: relative;top: 0%;left: 23%;"></iframe><br>
+
+      <p>Desc</p>
+    </div>
+
+    <div style="border: 5px solid;width: 280px;height: 225px;float: left;margin: 30px 30px;">
+      <iframe src="../3D-Objects/Car/3D-Car(icon).html" id="div6" class="div6-"
+        style="border: none;width: 145px;height: 120px;position: relative;top: 0%;left: 23%;"></iframe><br>
+
+      <p>Desc</p>
+    </div>
+
+    <div style="border: 5px solid;width: 280px;height: 225px;float: left;margin: 30px 30px;">
+      <iframe src="../3D-Objects/Car/3D-Car(icon).html" id="div7" class="div7-"
+        style="border: none;width: 145px;height: 120px;position: relative;top: 0%;left: 23%;"></iframe><br>
+
+      <p>Desc</p>
+    </div>
+
+    <div style="border: 5px solid;width: 280px;height: 225px;float: left;margin: 30px 30px;">
+      <iframe src="../3D-Objects/Car/3D-Car(icon).html" id="div8" class="div8-"
+        style="border: none;width: 145px;height: 120px;position: relative;top: 0%;left: 23%;"></iframe><br>
+
+      <p>Desc</p>
+    </div>
+
+    <div style="border: 5px solid;width: 280px;height: 225px;float: left;margin: 30px 30px;">
+      <iframe src="../3D-Objects/Car/3D-Car(icon).html" id="div9" class="div9-"
+        style="border: none;width: 145px;height: 120px;position: relative;top: 0%;left: 23%;"></iframe><br>
+
+      <p>Desc</p>
+    </div>
+
+    <div style="border: 5px solid;width: 280px;height: 225px;float: left;margin: 30px 30px;">
+      <iframe src="../3D-Objects/Car/3D-Car(icon).html" id="div10" class="div10-"
+        style="border: none;width: 145px;height: 120px;position: relative;top: 0%;left: 23%;"></iframe><br>
+
+      <p>Desc</p>
+    </div>
+
+    <div style="border: 5px solid;width: 280px;height: 225px;float: left;margin: 30px 30px;">
+      <iframe src="../3D-Objects/Car/3D-Car(icon).html" id="div11" class="div11-"
+        style="border: none;width: 145px;height: 120px;position: relative;top: 0%;left: 23%;"></iframe><br>
+
+      <p>Desc</p>
+    </div>
+
+    <div style="border: 5px solid;width: 280px;height: 225px;float: left;margin: 30px 30px;">
+      <iframe src="../3D-Objects/Car/3D-Car(icon).html" id="div12" class="div12-"
+        style="border: none;width: 145px;height: 120px;position: relative;top: 0%;left: 23%;"></iframe><br>
+
+      <p>Desc</p>
+    </div>
+
+  </div>
+
+  <div style="padding: 10px;">
+
+    <h2>Contact</h2>
+
+    <p>dominicyoungjackson@gmail.com</p>
+
+  </div>
 
 </body>
 
