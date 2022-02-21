@@ -123,3 +123,180 @@ a:hover {
   opacity: 0;
   transition: 0.3s;
 }
+
+@keyframes toright {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 95%;
+  }
+}
+
+.container {
+  width: 100%;
+  background-color: #ddd;
+  border-radius: 20px;
+}
+
+.html1 {
+  width: 95%; 
+  background-color: #ff4500;
+  text-align: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  color: white;
+  animation: html1 2s;
+}
+
+@keyframes html1 {
+  from {
+    width: 95%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+.css1 {
+  width: 85%; 
+  background-color: #0096dc;
+  text-align: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  color: white;
+  animation: css1 2s;
+}
+
+@keyframes css1 {
+  from {
+    width: 85%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+.js1 {
+  width: 60%; 
+  background-color: #f7e018;
+  text-align: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  color: white;
+  animation: js1 2s;
+}
+
+@keyframes js1 {
+  from {
+    width: 60%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+
+.php1 {
+  width: 5%; 
+  background-color: #8993c1;
+  text-align: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  color: white;
+  animation: php1 2s;
+}
+
+
+@keyframes php1 {
+  from {
+    width: 5%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+.html {
+  width: 95%; 
+  background-color: #ff4500;
+  text-align: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  color: white;
+  animation: html 2s;
+}
+
+@keyframes html {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 95%;
+  }
+}
+
+.css {
+  width: 85%; 
+  background-color: #0096dc;
+  text-align: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  color: white;
+  animation: css 2s;
+}
+
+@keyframes css {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 85%;
+  }
+}
+
+.js {
+  width: 60%; 
+  background-color: #f7e018;
+  text-align: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  color: white;
+  animation: js 2s;
+}
+
+@keyframes js {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 60%;
+  }
+}
+
+.php {
+  width: 5%; 
+  background-color: #8993c1;
+  text-align: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  color: white;
+  animation: php 2s;
+}
+
+@keyframes php {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 5%;
+  }
+}
