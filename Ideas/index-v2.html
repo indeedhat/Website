@@ -2,43 +2,52 @@
 <html>
 
 <head>
+  <!-- missing page title -->
+  <title>My Fancy New Website</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="styles.css" rel="stylesheet" type="text/css" />
   <script src="script.js" async></script>
 </head>
 
-<body style="background-color: #313131;">
-  <ul style="background-color: #ffffffc9;z-index: 100;">
-    <li><a href="#home" style="color: black;text-decoration: underline #00ffc3 2px;padding: 5px;">Home</a></li>
-    <li><a href="#news" style="text-decoration: none;color: black;padding: 5px;">Projects</a></li>
-    <li><a href="#contact" style="text-decoration: none;color: black;padding: 5px;">Contact</a></li>
-    <li><a href="#about" style="text-decoration: none;color: black;padding: 5px;">About</a></li>
-  </ul>
+<!-- Using inline css although not strictly wrong is something that really should be avoided where possible, it
+    is a "smell" that you are probably doing something wrong -->
+<body>
+  <!-- There are various html elements in the html5 spec that are designed 
+        specifically to be more descriptive about what the element is doing -->
+  <nav>
+    <ul>
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#news">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </nav>
 
-  <div class="wrapper"
-    style="background-image: url('background1.png');background-attachment: fixed;background-position: center;background-repeat: no-repeat;background-size: cover;border-radius: 20px;">
-    <div class="inner" style="border-radius: 20px;border: 2px solid #00000000;">
-      <div id="div1" class="div1" style="width: 1500px;max-width: 1500px;">
-
+  <!-- more descriptine tag -->
+  <section class="wrapper">
+    <!-- the style in here was broken, the border was invalid, i have also movet the radius to the css file
+        any place where you have a css block such as this really shouldnt have any inline styling unless it
+        iss to override the existing style for this given case -->
+    <div class="inner">
+      <!-- the ID div1 is meaningless "about-me" or something similar makes it a lot more obvious 
+        what is going on both when you come back to the project after a break or in other files such
+        as the css and js ones that reference this element -->
+      <div id="about-me" class="fade-show">
+        <!-- this is somewhere where there is definatly an argument to be made for inline style
+            it is something unique, it could still be moved into the css file -->
         <div style="
           border-radius: 50%;
           border: 5px solid #fff;
           background-size: contain;
-          background-image: url('Dominic.jpg');
+          background-image: url('Dominic.jpg'); /* This image doesnt exist */
           background-position: center;
           height: 335px;
           width: 254px;
           margin-left: auto;
           margin-right: auto;
-          ">
+          "></div>
 
-        </div>
-
-        <p style="
-          color: black;
-          font-size: 20px;
-          padding: 15px;
-          ">Hello, I'm Dominic and I like to do web development in my spare time. I created by first website
+        <p>Hello, I'm Dominic and I like to do web development in my spare time. I created by first website
           when I was 19, I was amazed how easy it was to understand the basics which gives me the
           confidence to keep going. I enjoy playing games with my friends whilst streaming on
           youtube. I also taught myself how to play an electric guitar and I played in a concert at
@@ -46,22 +55,21 @@
           Gold Award, it was very challenging and hard work.
         </p>
 
-        <p style="
-        color: black;
-        font-size: 20px;
-        padding: 15px;
-        ">I have just finished level 2 BTEC I.T at Gatehead College and I would like to show you some of my
+        <p>I have just finished level 2 BTEC I.T at Gatehead College and I would like to show you some of my
           college work.
         </p>
 
       </div>
     </div>
-  </div>
+  </section>
 
-  <div class="wrapper"
-    style="background-image: url('background2.png');background-attachment: fixed;background-position: center;background-repeat: no-repeat;background-size: cover;border-radius: 20px;">
-    <div class="inner" style="border-radius: 20px;border: 2px solid #00000000;">
-      <div id="div2" class="div2-" style="width: 1500px;max-width: 1500px;">
+  <!-- more descriptine tag -->
+  <section class="wrapper">
+    <!-- the style in here was broken, the border was invalid, i have also movet the radius to the css file
+        any place where you have a css block such as this really shouldnt have any inline styling unless it
+        iss to override the existing style for this given case -->
+    <div class="inner">
+      <div id="my-skills" class="fade-hide">
 
         <h1 style="text-align: center;">My Skills</h1>
 
@@ -87,45 +95,17 @@
 
       </div>
     </div>
-  </div>
+  </section>
 
-  <div class="wrapper"
-    style="background-image: url('background3.png');background-attachment: fixed;background-position: center;background-repeat: no-repeat;background-size: cover;border-radius: 20px;">
-    <div class="inner" style="border-radius: 20px;border: 2px solid #00000000;">
-      <div id="div3" class="div3-" style="width: 1500px;max-width: 1500px;">
-
-        <p style="
-          color: black;
-          font-size: 20px;
-          padding: 15px;
-          "><iframe src="../3D-Objects/Car/3D-Car(icon).html" style="height: 130px; width: 150px; float: left; margin-right: 30px; border: none; scale: 1.5;
-          "></iframe>Hello, I'm Dominic and I like to do web development in my spare time. I created by first website
-          when I was 19, I was amazed how easy it was to understand the basics which gives me the
-          confidence to keep going. I enjoy playing games with my friends whilst streaming on
-          youtube. I also taught myself how to play an electric guitar and I played in a concert at
-          the Tall Ships and Sunderland Empire. In july 2019 I completed a the Duke Of Edinburgh
-          Gold Award, it was very challenging and hard work.
-
-          <br><br>
-
-          Hello, I'm Dominic and I like to do web development in my spare time. I created by first website
-          when I was 19, I was amazed how easy it was to understand the basics which gives me the
-          confidence to keep going. I enjoy playing games with my friends whilst streaming on
-          youtube. I also taught myself how to play an electric guitar and I played in a concert at
-          the Tall Ships and Sunderland Empire. In july 2019 I completed a the Duke Of Edinburgh
-          Gold Award, it was very challenging and hard work.
-
-          <br><br>
-
-          Hello, I'm Dominic and I like to do web development in my spare time. I created by first website
-          when I was 19, I was amazed how easy it was to understand the basics which gives me the
-          confidence to keep going. I enjoy playing games with my friends whilst streaming on
-          youtube. I also taught myself how to play an electric guitar and I played in a concert at
-          the Tall Ships and Sunderland Empire. In july 2019 I completed a the Duke Of Edinburgh
-          Gold Award, it was very challenging and hard work.
-
-          <br><br>
-
+  <!-- more descriptine tag -->
+  <section class="wrapper">
+    <!-- the style in here was broken, the border was invalid, i have also movet the radius to the css file
+        any place where you have a css block such as this really shouldnt have any inline styling unless it
+        iss to override the existing style for this given case -->
+    <div class="inner">
+      <div id="box-car" class="fade-hide">
+        <p>
+          <iframe src="../3D-Objects/Car/3D-Car(icon).html" style="height: 130px; width: 150px;"></iframe>
           Hello, I'm Dominic and I like to do web development in my spare time. I created by first website
           when I was 19, I was amazed how easy it was to understand the basics which gives me the
           confidence to keep going. I enjoy playing games with my friends whilst streaming on
@@ -133,48 +113,8 @@
           the Tall Ships and Sunderland Empire. In july 2019 I completed a the Duke Of Edinburgh
           Gold Award, it was very challenging and hard work.
         </p>
-
-      </div>
-    </div>
-  </div>
-
-  <div class="wrapper"
-    style="background-image: url('background4.png');background-attachment: fixed;background-position: center;background-repeat: no-repeat;background-size: cover;border-radius: 20px;">
-    <div class="inner" style="border-radius: 20px;border: 2px solid #00000000;">
-      <div id="div4" class="div4-" style="width: 1500px;max-width: 1500px;">
-
-        <p style="
-          color: black;
-          font-size: 20px;
-          padding: 15px;
-          "><iframe src="../3D-Objects/Cube/3D-Cube(icon).html" style="height: 80px; width: 110px; float: left; margin-right: 30px; border: none; scale: 1.5;
-          "></iframe>Hello, I'm Dominic and I like to do web development in my spare time. I created by first website
-          when I was 19, I was amazed how easy it was to understand the basics which gives me the
-          confidence to keep going. I enjoy playing games with my friends whilst streaming on
-          youtube. I also taught myself how to play an electric guitar and I played in a concert at
-          the Tall Ships and Sunderland Empire. In july 2019 I completed a the Duke Of Edinburgh
-          Gold Award, it was very challenging and hard work.
-
-          <br><br>
-
-          Hello, I'm Dominic and I like to do web development in my spare time. I created by first website
-          when I was 19, I was amazed how easy it was to understand the basics which gives me the
-          confidence to keep going. I enjoy playing games with my friends whilst streaming on
-          youtube. I also taught myself how to play an electric guitar and I played in a concert at
-          the Tall Ships and Sunderland Empire. In july 2019 I completed a the Duke Of Edinburgh
-          Gold Award, it was very challenging and hard work.
-
-          <br><br>
-
-          Hello, I'm Dominic and I like to do web development in my spare time. I created by first website
-          when I was 19, I was amazed how easy it was to understand the basics which gives me the
-          confidence to keep going. I enjoy playing games with my friends whilst streaming on
-          youtube. I also taught myself how to play an electric guitar and I played in a concert at
-          the Tall Ships and Sunderland Empire. In july 2019 I completed a the Duke Of Edinburgh
-          Gold Award, it was very challenging and hard work.
-
-          <br><br>
-
+        <!-- the p(aragraph) tag is designed specifically for this -->
+        <p>
           Hello, I'm Dominic and I like to do web development in my spare time. I created by first website
           when I was 19, I was amazed how easy it was to understand the basics which gives me the
           confidence to keep going. I enjoy playing games with my friends whilst streaming on
@@ -182,15 +122,77 @@
           the Tall Ships and Sunderland Empire. In july 2019 I completed a the Duke Of Edinburgh
           Gold Award, it was very challenging and hard work.
         </p>
-
+        <p>
+          Hello, I'm Dominic and I like to do web development in my spare time. I created by first website
+          when I was 19, I was amazed how easy it was to understand the basics which gives me the
+          confidence to keep going. I enjoy playing games with my friends whilst streaming on
+          youtube. I also taught myself how to play an electric guitar and I played in a concert at
+          the Tall Ships and Sunderland Empire. In july 2019 I completed a the Duke Of Edinburgh
+          Gold Award, it was very challenging and hard work.
+        </p>
+        <p>
+          Hello, I'm Dominic and I like to do web development in my spare time. I created by first website
+          when I was 19, I was amazed how easy it was to understand the basics which gives me the
+          confidence to keep going. I enjoy playing games with my friends whilst streaming on
+          youtube. I also taught myself how to play an electric guitar and I played in a concert at
+          the Tall Ships and Sunderland Empire. In july 2019 I completed a the Duke Of Edinburgh
+          Gold Award, it was very challenging and hard work.
+        </p>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div class="wrapper"
-    style="background-image: url('background5.png');background-attachment: fixed;background-position: center;background-repeat: no-repeat;background-size: cover;border-radius: 20px;min-height: 30vh;">
-    <div class="inner" style="border-radius: 20px;border: 2px solid #00000000;">
-      <div id="div5" class="div5-" style="width: 1500px;max-width: 1500px;text-align: center;">
+  <!-- more descriptine tag -->
+  <section class="wrapper">
+    <!-- the style in here was broken, the border was invalid, i have also movet the radius to the css file
+        any place where you have a css block such as this really shouldnt have any inline styling unless it
+        iss to override the existing style for this given case -->
+    <div class="inner">
+      <div id="the-cuuuube" class="fade-hide">
+        <p>
+          <iframe src="../3D-Objects/Cube/3D-Cube(icon).html" style="height: 80px; width: 110px;"></iframe>
+          Hello, I'm Dominic and I like to do web development in my spare time. I created by first website
+          when I was 19, I was amazed how easy it was to understand the basics which gives me the
+          confidence to keep going. I enjoy playing games with my friends whilst streaming on
+          youtube. I also taught myself how to play an electric guitar and I played in a concert at
+          the Tall Ships and Sunderland Empire. In july 2019 I completed a the Duke Of Edinburgh
+          Gold Award, it was very challenging and hard work.
+        </p>
+        <p>
+          Hello, I'm Dominic and I like to do web development in my spare time. I created by first website
+          when I was 19, I was amazed how easy it was to understand the basics which gives me the
+          confidence to keep going. I enjoy playing games with my friends whilst streaming on
+          youtube. I also taught myself how to play an electric guitar and I played in a concert at
+          the Tall Ships and Sunderland Empire. In july 2019 I completed a the Duke Of Edinburgh
+          Gold Award, it was very challenging and hard work.
+        </p>
+        <p>
+          Hello, I'm Dominic and I like to do web development in my spare time. I created by first website
+          when I was 19, I was amazed how easy it was to understand the basics which gives me the
+          confidence to keep going. I enjoy playing games with my friends whilst streaming on
+          youtube. I also taught myself how to play an electric guitar and I played in a concert at
+          the Tall Ships and Sunderland Empire. In july 2019 I completed a the Duke Of Edinburgh
+          Gold Award, it was very challenging and hard work.
+        </p>
+        <p>
+          Hello, I'm Dominic and I like to do web development in my spare time. I created by first website
+          when I was 19, I was amazed how easy it was to understand the basics which gives me the
+          confidence to keep going. I enjoy playing games with my friends whilst streaming on
+          youtube. I also taught myself how to play an electric guitar and I played in a concert at
+          the Tall Ships and Sunderland Empire. In july 2019 I completed a the Duke Of Edinburgh
+          Gold Award, it was very challenging and hard work.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- more descriptine tag -->
+  <section class="wrapper">
+    <!-- the style in here was broken, the border was invalid, i have also movet the radius to the css file
+        any place where you have a css block such as this really shouldnt have any inline styling unless it
+        iss to override the existing style for this given case -->
+    <div class="inner">
+      <div id="contact" class="fade-hide" style="width: 1500px;max-width: 1500px;text-align: center;">
 
         <h1>Contact</h1>
 
@@ -204,8 +206,7 @@
 
       </div>
     </div>
-  </div>
-
+  </section>
 </body>
 
 </html>

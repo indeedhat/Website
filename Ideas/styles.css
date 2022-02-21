@@ -1,14 +1,13 @@
-ul {
-  padding: 7px;
-  width: max-content;
-  position: sticky;
-  top: 10px;
-  margin: 35px auto;
-  border-radius: 12px;
+/* It is a good idea to group all your unclassified rules together at the top of the file rather than
+* having them spread about randomly, this helps to avoid having accidentally conflictirg rules.
+* it also saves time in looking for existing ones */
+
+* {
+  box-sizing: border-box;
 }
 
-li {
-  display: inline;
+body {
+  background-color: #313131;
 }
 
 p,
@@ -22,60 +21,9 @@ h6 {
   transition: 1s;
 }
 
-.wrapper {
-  min-height: 98vh;
-  display: flex;
-  align-items: center;
-  margin: 10px;
-}
-
-.inner {
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.26);
-  margin: 0 auto;
-}
-
-.inner .image-holder {
-  width: 50%;
-}
-
-.inner form {
-  width: 360px;
-  margin: 0 auto;
-}
-
-.inner h3 {
-  text-transform: uppercase;
-  font-size: 25px;
-  font-family: "Poppins-SemiBold";
-  text-align: center;
-  margin-bottom: 28px;
-}
-
-@media (max-width: 1199px) {
-  .wrapper {
-    background-position: right center;
-  }
-}
-
-@media (max-width: 991px) {
-  .inner form {
-    padding-top: 10px;
-  }
-}
-
-@media (max-width: 767px) {
-  .inner {
-    display: block;
-  }
-
-  .inner .image-holder {
-    width: 100%;
-  }
-
-  .inner form {
-    padding: 40px 0 30px;
-  }
+p {
+  font-size: 20px;
+  padding: 15px;
 }
 
 a {
@@ -88,41 +36,157 @@ a:hover {
   background-color: #d9d9d9;
 }
 
-* {
-  box-sizing: border-box;
+/* This is totally a personal preference and some people dont like it but
+* i find that having comment headers for different sections in my css filse helps
+* me to find what im looking for faster */
+
+/* ----------------- Navigation ------------ */
+nav ul {
+  background-color: #ffffffc9;
+  z-index: 100;
+  padding: 7px;
+  width: max-content;
+  position: sticky;
+  top: 10px;
+  margin: 35px auto;
+  border-radius: 12px;
 }
 
-.div1,
-.div2,
-.div3,
-.div4,
-.div5,
-.div6,
-.div7,
-.div8,
-.div9,
-.div10,
-.div11,
-.div12 {
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  padding: 5px;
+}
+
+nav ul li a.active {
+  text-decoration: underline #00ffc3 2px;
+}
+
+
+/* ----------------- Content ------------ */
+/* More specific selectors are better where possible to stop accidental style clashes */
+section.wrapper {
+  min-height: 98vh;
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+section.wrapper .inner {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.26);
+  margin: 0 auto;
+  border-radius: 20px;
+}
+section.wrapper .inner > div {
+  width: 1500px;
+  max-width: 1500px;
+}
+
+section.wrapper .inner iframe {
+  float: left; 
+  margin-right: 30px; 
+  border: none; 
+  scale: 1.5;
+}
+
+section.wrapper .inner .image-holder {
+  width: 50%;
+}
+
+section.wrapper .inner form {
+  width: 360px;
+  margin: 0 auto;
+}
+
+section.wrapper .inner h3 {
+  text-transform: uppercase;
+  font-size: 25px;
+  font-family: "Poppins-SemiBold";
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+/* ----------------- Responsive ------------ */
+@media (max-width: 1199px) {
+  section.wrapper {
+    background-position: right center;
+  }
+}
+
+@media (max-width: 991px) {
+  section.wrapper .inner form {
+    padding-top: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  section.wrapper .inner {
+    display: block;
+  }
+
+  section.wrapper .inner .image-holder {
+    width: 100%;
+  }
+
+  .inner form {
+    padding: 40px 0 30px;
+  }
+}
+
+
+/* this is not very descriptive and also not very scaleable
+* each time you add a new show/hide element you will have to update multiple places 
+*
+* Dont forget that elements can have multiple classes so adding a single more descriptive
+* class to multiple elements make for much more understandoble code 
+*
+* The classes i have chosen to replace them admittedly suck but it illustrates the point */
+/* .div1, */
+/* .div2, */
+/* .div3, */
+/* .div4, */
+/* .div5, */
+/* .div6, */
+/* .div7, */
+/* .div8, */
+/* .div9, */
+/* .div10, */
+/* .div11, */
+/* .div12 { */
+/*   opacity: 1; */
+/*   transition: 0.3s; */
+/* } */
+
+/* .div1-, */
+/* .div2-, */
+/* .div3-, */
+/* .div4-, */
+/* .div5-, */
+/* .div6-, */
+/* .div7-, */
+/* .div8-, */
+/* .div9-, */
+/* .div10-, */
+/* .div11-, */
+/* .div12- { */
+/*   opacity: 0; */
+/*   transition: 0.3s; */
+/* } */
+.fade-show {
   opacity: 1;
   transition: 0.3s;
 }
 
-.div1-,
-.div2-,
-.div3-,
-.div4-,
-.div5-,
-.div6-,
-.div7-,
-.div8-,
-.div9-,
-.div10-,
-.div11-,
-.div12- {
+.fade-hide {
   opacity: 0;
   transition: 0.3s;
 }
+
 
 @keyframes toright {
   from {
@@ -132,6 +196,9 @@ a:hover {
     width: 95%;
   }
 }
+
+/* these bars are reusing a lot of the same styling, it is a good candidet for 
+* consolidating */
 
 .container {
   width: 100%;
