@@ -23,11 +23,10 @@ h6 {
 }
 
 .wrapper {
-  min-height: 100vh;
-  background-size: cover;
-  background-repeat: no-repeat;
+  min-height: 98vh;
   display: flex;
   align-items: center;
+  margin: 10px;
 }
 
 .inner {
@@ -106,7 +105,7 @@ a:hover {
 .div11,
 .div12 {
   opacity: 1;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 .div1-,
@@ -122,5 +121,5 @@ a:hover {
 .div11-,
 .div12- {
   opacity: 0;
-  transition: 0.5s;
+  transition: 0.3s;
 }
